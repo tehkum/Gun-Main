@@ -11,7 +11,7 @@ export function ProductProvider({ children }) {
   const [searchWord, setSearchWord ] = useState("");
 
   const fetchData = async () => {
-    const res = await fetch("https://fair-jade-bream-suit.cyclic.app/api/admin/products",{method: 'GET'});
+    const res = await fetch("https://teal-vast-blackbuck.cyclic.app//api/admin/products",{method: 'GET'});
     const product = await res.json();
     setProductData(product.products);  
   };  

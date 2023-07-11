@@ -60,7 +60,7 @@ export default function ProductManage() {
   const handleSubmit = async () => {
     try {
       const res = await axios.post(
-        "https://fair-jade-bream-suit.cyclic.app/api/admin/products/add", {...formData},
+        "https://teal-vast-blackbuck.cyclic.app//api/admin/products/add", {...formData},
         {
           headers: {
             "Content-Type": "application/json",

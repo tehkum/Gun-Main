@@ -22,7 +22,7 @@ export default function AddressPage(){
 
   const orderHandler = async () => {
     try {
-        const res = await axios.post("https://fair-jade-bream-suit.cyclic.app/api/order/checkout",{...checkoutDetails},{
+        const res = await axios.post("https://teal-vast-blackbuck.cyclic.app//api/order/checkout",{...checkoutDetails},{
         headers: {
           "Content-Type": "application/json",
         },

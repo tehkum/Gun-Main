@@ -21,7 +21,7 @@ export default function AllProducts(){
       };
 
     const handleSubmit = async () => {
-        const res =  await fetch(`https://fair-jade-bream-suit.cyclic.app/api/admin/products/${product._id}/edit`, {
+        const res =  await fetch(`https://teal-vast-blackbuck.cyclic.app//api/admin/products/${product._id}/edit`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",

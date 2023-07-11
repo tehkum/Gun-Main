@@ -13,7 +13,7 @@ export default function YoutubeManage() {
 
   const videoHandler = async () => {
     try {
-      const res = await fetch("https://fair-jade-bream-suit.cyclic.app/api/admin/", {
+      const res = await fetch("https://teal-vast-blackbuck.cyclic.app//api/admin/", {
         method: "GET",
       });
       const data = await res.json();
@@ -37,7 +37,7 @@ export default function YoutubeManage() {
 
   const handleSubmit = async () => {
     try {
-      const res = await fetch("https://fair-jade-bream-suit.cyclic.app/api/admin/youtube/add", {
+      const res = await fetch("https://teal-vast-blackbuck.cyclic.app//api/admin/youtube/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
