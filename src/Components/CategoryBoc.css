@@ -1,0 +1,25 @@
+.category-box {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    align-items: center;
+}
+.category-box img{
+    border-radius: 4rem;
+    width: 100px;
+    height: 100px;
+}
+
+@media (max-width: 768px) {
+    .category-box {
+        display: flex;
+        flex-direction: column;
+        width: 150px;
+        align-items: center;
+    }
+    .category-box img{
+        border-radius: 4rem;
+        width: 70px;
+        height: 70px;
+    }
+}

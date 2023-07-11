@@ -1,0 +1,31 @@
+.home-products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 1rem 2rem;
+    justify-content: center;
+}
+
+.home-category {
+    display: flex;
+    width: 100%;
+    overflow: auto;
+    gap: 10px;
+    background-color: greenyellow;
+    /* padding: 0.5rem; */padding: 10px 0;
+}
+
+
+
+@media (max-width: 768px) {
+    .home-products {
+        margin: 10px;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .home-products {
+        margin: 1rem 2rem;
+    }
+}

@@ -1,0 +1,35 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+    background-color: white;
+    border-bottom: 2px solid red;
+    /* position: fixed;
+    right: 0;
+    left: 0;
+    top:0; */
+
+}
+
+.header input {
+    width: 400px;
+    padding: 1rem 1.5rem;
+    height: 40px;
+}
+
+.nav-links-main {
+    align-self: center;
+}
+
+.nav-links {
+    font-size: 20px;
+    margin: 1rem;
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width: 767px) {
+    .nav-links-main {
+        display: none;
+    }
+}
