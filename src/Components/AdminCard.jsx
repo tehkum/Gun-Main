@@ -17,7 +17,7 @@ export default function Admincard(props) {
 
   const deleteHandler = async () => {
     const res = await fetch(
-      `https://teal-vast-blackbuck.cyclic.app//api/admin/products/${_id}/delete`,
+      `https://teal-vast-blackbuck.cyclic.app/api/admin/products/${_id}/delete`,
       { method: "DELETE" }
     );
     console.log(await res.json());

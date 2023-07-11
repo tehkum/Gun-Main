@@ -37,7 +37,7 @@ export default function YoutubeManage() {
 
   const handleSubmit = async () => {
     try {
-      const res = await fetch("https://teal-vast-blackbuck.cyclic.app//api/admin/youtube/add", {
+      const res = await fetch("https://teal-vast-blackbuck.cyclic.app/api/admin/youtube/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

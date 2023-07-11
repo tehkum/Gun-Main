@@ -8,7 +8,7 @@ export default function AllProducts(){
     const [ product, setProduct ] = useState({});
 
     useEffect(()=>{
-        setProduct(productData.find(item=> item._id == id))
+        setProduct(productData.find(item=> +item._id == +id))
     },[id])
 
     const handleChange = (e) => {
