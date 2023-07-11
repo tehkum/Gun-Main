@@ -3,7 +3,8 @@ import "./Productcard.css";
 
 export default function Productcard(props) {
   
-  const { _id, name, image1, image2, image3, image4, category, description1, description2, manufactureYear, price, edition, numberOfPages, language } = props;
+  // eslint-disable-next-line react/prop-types
+  const { _id, name, image1, category, price } = props;
 
   const setCart = () => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
