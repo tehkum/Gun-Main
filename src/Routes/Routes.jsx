@@ -22,12 +22,13 @@ export default function AllRoutes(){
         <Route path="/checkout" element={<CheckoutPage/>}/>
         <Route path="/product/:productId" element={<ProductPage/>}/>
         <Route path="/Address" element={<AddressPage/>}/>
-        <Route path="/all-orders" element={<AllOrders/>} />
-        <Route path="/all-products/:id" element={<AllProducts/>} />
-        <Route path="/all-videos" element={<AllVideos/>} />
-        <Route path="/order-management" element={<OrderManage/>} />
-        <Route path="/product-management" element={<ProductManage/>} />
-        <Route path="/video-management" element={<YoutubeManage/>} />
+        {/* ******************************************************** */}
+        <Route path="/admin/all-orders" element={<AllOrders/>} />
+        <Route path="/admin/all-products/:id" element={<AllProducts/>} />
+        <Route path="/admin/all-videos" element={<AllVideos/>} />
+        <Route path="/admin/order-management" element={<OrderManage/>} />
+        <Route path="/admin/product-management" element={<ProductManage/>} />
+        <Route path="/admin/video-management" element={<YoutubeManage/>} />
         
     </Routes>
 }
