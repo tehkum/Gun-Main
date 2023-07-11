@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import CategoryBox from "../../Components/CategoryBox";
-import ProductCard from "../../Components/ProductCard";
+import ProductCard from "../../Components/productCard";
 import "./Homepage.css";
 import { useProducts } from "../../main";
 
