@@ -7,7 +7,7 @@ export default function OrderManage() {
 
   const dataHandler = async () => {
     try {
-      const res = await fetch("https://teal-vast-blackbuck.cyclic.app//api/admin/", {
+      const res = await fetch("https://teal-vast-blackbuck.cyclic.app/api/admin/", {
         method: "GET",
       });
       const data = await res.json();
