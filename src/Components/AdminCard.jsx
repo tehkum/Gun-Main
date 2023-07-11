@@ -17,7 +17,7 @@ export default function Admincard(props) {
 
   const deleteHandler = async () => {
     const res = await fetch(
-      `http://localhost:3000/api/admin/products/${_id}/delete`,
+      `https://gungun-react.vercel.app/api/admin/products/${_id}/delete`,
       { method: "DELETE" }
     );
     console.log(await res.json());

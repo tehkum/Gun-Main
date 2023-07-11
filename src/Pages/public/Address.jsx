@@ -22,7 +22,7 @@ export default function AddressPage(){
 
   const orderHandler = async () => {
     try {
-        const res = await axios.post("http://localhost:3000/api/order/checkout",{...checkoutDetails},{
+        const res = await axios.post("https://gungun-react.vercel.app/api/order/checkout",{...checkoutDetails},{
         headers: {
           "Content-Type": "application/json",
         },

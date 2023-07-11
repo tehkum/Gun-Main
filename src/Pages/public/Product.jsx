@@ -35,7 +35,7 @@ export default function ProductPage() {
   },[])
 
   const getReviews = async () => {
-    const res = await axios.get("http://localhost:3000/api/")
+    const res = await axios.get("https://gungun-react.vercel.app/api/")
     setReviewData(res?.data?.review.filter(item=>item.productId === productId))
   }
 
@@ -51,7 +51,7 @@ const { _id, name, category, image1, image2, image3, image4, description1, descr
 
 const addReviewHandler = async () => {
   
-  const res = await fetch(`http://localhost:3000/api/products/review`, {
+  const res = await fetch(`https://gungun-react.vercel.app/api/products/review`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -60,7 +60,7 @@ export default function ProductManage() {
   const handleSubmit = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/admin/products/add", {...formData},
+        "https://gungun-react.vercel.app/api/admin/products/add", {...formData},
         {
           headers: {
             "Content-Type": "application/json",

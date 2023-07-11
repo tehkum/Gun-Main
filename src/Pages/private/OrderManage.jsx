@@ -7,7 +7,7 @@ export default function OrderManage() {
 
   const dataHandler = async () => {
     try {
-      const res = await fetch("http://localhost:3000/api/admin/", {
+      const res = await fetch("https://gungun-react.vercel.app/api/admin/", {
         method: "GET",
       });
       const data = await res.json();
