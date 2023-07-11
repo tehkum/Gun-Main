@@ -90,7 +90,7 @@ export default function YoutubeManage() {
       </div>
       <div className="product-display">
         {youtubeVids.map((items) => {
-          const { _id, title, link } = items;
+          const { _id, link } = items;
           return (
             <div key={_id}>
               <iframe
