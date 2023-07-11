@@ -22,7 +22,6 @@ export default function AllRoutes(){
         <Route path="/checkout" element={<CheckoutPage/>}/>
         <Route path="/product/:productId" element={<ProductPage/>}/>
         <Route path="/Address" element={<AddressPage/>}/>
-        {/* ******************************************************** */}
         <Route path="/all-orders" element={<AllOrders/>} />
         <Route path="/all-products/:id" element={<AllProducts/>} />
         <Route path="/all-videos" element={<AllVideos/>} />
