@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router"
-import { useProducts } from "../../main";
+import { useProducts } from "../..";
 
 export default function AllProducts(){
     const { id } = useParams();

@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import "./Product.css";
-import { useProducts } from "../../main";
+import { useProducts } from "../..";
 import axios from "axios";
 
 export default function ProductPage() {

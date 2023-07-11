@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import "./Cartpage.css";
 import CartCard from "../../Components/CartBox";
-import { useCart } from "../../main";
+import { useCart } from "../..";
 import { useNavigate } from "react-router";
 
 

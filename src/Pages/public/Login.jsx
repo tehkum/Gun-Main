@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { signin } from "../../img"
 import "./Login.css";
-import { useAuth } from "../../main";
+import { useAuth } from "../..";
 
 export default function LoginPage(){
     const { loginHandler, setForm, loginForm } = useContext(useAuth);

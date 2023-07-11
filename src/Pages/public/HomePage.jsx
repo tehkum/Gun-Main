@@ -4,7 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import CategoryBox from "../../Components/CategoryBox";
 import ProductCard from "../../Components/productCard";
 import "./Homepage.css";
-import { useProducts } from "../../main";
+import { useProducts } from "../..";
 
 export default function HomePage() {
   const { productData, searchWord } = useContext(useProducts);

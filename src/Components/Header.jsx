@@ -2,7 +2,7 @@ import "./Header.css"
 import {icon} from "../img/index";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
-import { useProducts } from "../main";
+import { useProducts } from "..";
 
 
 

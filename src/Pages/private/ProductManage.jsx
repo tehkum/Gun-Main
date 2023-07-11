@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import "./ProductManage.css";
-import { useProducts } from "../../main";
+import { useProducts } from "../..";
 import Admincard from "../../Components/AdminCard";
 import axios from "axios";
 
