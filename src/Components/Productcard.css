@@ -1,6 +1,6 @@
 .q7Card{
     width: 280px;
-    height: 410px;
+    height: 420px;
     border: 1px solid #8d8888;
     font-family: sans-serif;
     display: inline-flex;
@@ -9,22 +9,36 @@
     border-radius: 10px;
     overflow: hidden;
     padding: 0.5rem;
+    background-color:  white;
 }
 .q7Card img{
     /* width: 80%;
     margin: 0 auto; */
-    height: 65%;
+    height: 240px;
+    /* object-fit:fill; */
 }
-.q7Card button{
+.q7-btn{
     padding: 0.5rem;
     background-color: green;
-    border: 1px solid #e8e8e8;
+    border: 1px solid green;
     color: white;
     border-radius: 5px;
     width: 90%;
     margin: auto;
     margin-top: 5px;
 }
+
+.q7-view-btn{
+    border: 1px solid green;
+    color: green;
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    width: 90%;
+    margin: auto;
+    margin-top: 5px;
+}
+
 .q7Cont{
     display: flex;
     justify-content: space-between;

@@ -24,7 +24,8 @@ export default function Productcard(props) {
             <p>{category}</p></div>
             <p>₹ {price}</p>
         </div></Link>
-        <button onClick={setCart}>Add to cart</button>
+        <button className="q7-view-btn">View Product</button>
+        <button className="q7-btn" onClick={setCart}>Add to cart</button>
     </div>
   );
 }

@@ -1,8 +1,9 @@
 body{
   margin: 0;
   border: 0;
-  font-family: 'Oswald';
+  font-family: 'sans-serif';
   width: 100%;
+  /* background-color: #fce5ce; */
 }
 
 /* :root {

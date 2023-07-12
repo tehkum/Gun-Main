@@ -56,11 +56,11 @@ export default function ProductManage() {
     }
   };
 
-
   const handleSubmit = async () => {
     try {
       const res = await axios.post(
-        "https://teal-vast-blackbuck.cyclic.app/api/admin/products/add", {...formData},
+        "https://teal-vast-blackbuck.cyclic.app/api/admin/products/add",
+        { ...formData },
         {
           headers: {
             "Content-Type": "application/json",
@@ -73,14 +73,13 @@ export default function ProductManage() {
     }
   };
 
-
-  
   return (
     <div>
       <div className="login-sec-2">
         <h1>Add Product</h1>
-        <label>
+        <label htmlFor="name">
           <input
+            id="name"
             type="text"
             name="name"
             value={formData.name}
@@ -89,16 +88,9 @@ export default function ProductManage() {
           />
         </label>
 
-        <label>
-          {/* <input
-            type="text"
-            name="category"
-            value={formData.category}
-            onChange={handleChange}
-            placeholder="Category"
-          /> */}
-          Category: 
-          <select name="category"
+        <label htmlFor="category">
+          Category:
+          <select name="category" id="category"
             value={formData.category}
             onChange={handleChange}>
             <option value="Blouse Paper Cutting Pattern">Blouse Paper Cutting Pattern</option>
@@ -107,9 +99,10 @@ export default function ProductManage() {
           </select>
         </label>
 
-        <label>
+        <label htmlFor="image1">
           Front Image
           <input
+            id="image1"
             type="file"
             name="image1"
             // value={formData.category}
@@ -117,9 +110,10 @@ export default function ProductManage() {
             // placeholder="Category"
           />
         </label>
-        <label>
+        <label htmlFor="image2">
           Image 1
           <input
+            id="image2"
             type="file"
             name="image2"
             // value={formData.category}
@@ -127,29 +121,32 @@ export default function ProductManage() {
             // placeholder="Category"
           />
         </label>
-        <label>
+        <label htmlFor="image3">
           Image 2
           <input
             type="file"
             name="image3"
+            id="image3"
             // value={formData.category}
             onChange={imageHandler}
             // placeholder="Category"
           />
         </label>
-        <label>
+        <label htmlFor="image4">
           Image 3
           <input
             type="file"
             name="image4"
+            id="image4"
             // value={formData.category}
             onChange={imageHandler}
             // placeholder="Category"
           />
         </label>
 
-        <label>
+        <label htmlFor="price">
           <input
+            id="price"
             type="text"
             name="price"
             value={formData.price}
@@ -158,8 +155,9 @@ export default function ProductManage() {
           />
         </label>
 
-        <label>
+        <label htmlFor="description1">
           <textarea
+            id="description1"
             name="description1"
             value={formData.description1}
             onChange={handleChange}
@@ -167,8 +165,9 @@ export default function ProductManage() {
           ></textarea>
         </label>
 
-        <label>
+        <label htmlFor="description2">
           <textarea
+            id="description2"
             name="description2"
             value={formData.description2}
             onChange={handleChange}
@@ -176,8 +175,9 @@ export default function ProductManage() {
           ></textarea>
         </label>
 
-        <label>
+        <label htmlFor="manYear">
           <input
+            id="manYear"
             type="text"
             name="manufactureYear"
             value={formData.manufactureYear}
@@ -186,8 +186,9 @@ export default function ProductManage() {
           />
         </label>
 
-        <label>
+        <label htmlFor="edition">
           <input
+            id="edition"
             type="text"
             name="edition"
             value={formData.edition}
@@ -196,8 +197,9 @@ export default function ProductManage() {
           />
         </label>
 
-        <label>
+        <label htmlFor="nop">
           <input
+            id="nop"
             type="text"
             name="numberOfPages"
             value={formData.numberOfPages}
@@ -206,8 +208,9 @@ export default function ProductManage() {
           />
         </label>
 
-        <label>
+        <label htmlFor="lang">
           <input
+            id="lang"
             type="text"
             name="language"
             value={formData.language}
@@ -252,6 +255,3 @@ export default function ProductManage() {
     </div>
   );
 }
-
-
-
