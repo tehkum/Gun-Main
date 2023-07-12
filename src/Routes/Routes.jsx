@@ -12,6 +12,7 @@ import AllVideos from "../Pages/private/AllVideo";
 import OrderManage from "../Pages/private/OrderManage";
 import ProductManage from "../Pages/private/ProductManage";
 import YoutubeManage from "../Pages/private/YoutubeManage";
+import YoutubeVids from "../Pages/public/Youtubevideos";
 
 export default function AllRoutes(){
     return <Routes>
@@ -22,6 +23,7 @@ export default function AllRoutes(){
         <Route path="/checkout" element={<CheckoutPage/>}/>
         <Route path="/product/:productId" element={<ProductPage/>}/>
         <Route path="/Address" element={<AddressPage/>}/>
+        <Route path="/youtube-vids" element={<YoutubeVids />} />
         {/* ******************************************************** */}
         <Route path="/admin/all-orders" element={<AllOrders/>} />
         <Route path="/admin/all-products/:id" element={<AllProducts/>} />

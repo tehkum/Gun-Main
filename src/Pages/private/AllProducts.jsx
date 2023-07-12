@@ -19,6 +19,7 @@ export default function AllProducts(){
         }));
         console.log(product)
       };
+      // #38d02a
 
     const handleSubmit = async () => {
         const res =  await fetch(`https://teal-vast-blackbuck.cyclic.app/api/admin/products/${product._id}/edit`, {

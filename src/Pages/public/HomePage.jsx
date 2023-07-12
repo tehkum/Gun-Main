@@ -61,7 +61,7 @@ export default function HomePage() {
           })}
       </div>
 
-      <h1 style={{textAlign: 'center', backgroundColor: "green", color: "white", fontSize: "40px", padding: "30px"}}>Products</h1>
+      <h1 style={{textAlign: 'center', backgroundColor: "#38d02a", color: "white", fontSize: "40px", padding: "30px"}}>Products</h1>
 
       {searchFilter
         ?.reduce(
