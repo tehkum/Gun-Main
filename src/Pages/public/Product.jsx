@@ -91,10 +91,10 @@ const addReviewHandler = async () => {
       </div>
     </div>
     <h2>Reviews</h2>
-    <form style={{display: 'flex', flexWrap: "wrap", justifyContent: "center", gap: "10px"}}>
+    <div style={{display: 'flex', flexWrap: "wrap", justifyContent: "center", gap: "10px"}}>
     <input type="text" placeholder="Write a review" onChange={reviewHandler} name="comment" className="review-input"/>
     <input type="text" placeholder="Your name" onChange={reviewHandler} name="name" className="review-input"/>
-    <button onClick={addReviewHandler} className="review-btn">Add Review</button></form>
+    <button onClick={addReviewHandler} className="review-btn">Add Review</button></div>
     <div>{reviewData?.map(item=><div key={item._id} className="review-box">
       <p style={{margin: "0"}}><strong>Name:</strong> {item.name}</p>
       <p style={{margin: "0"}}><strong>Remark:</strong> {item.comment}</p>
