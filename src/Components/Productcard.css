@@ -1,20 +1,23 @@
 .q7Card{
     width: 280px;
     height: 410px;
-    border: 1px solid #e8e8e8;
+    border: 1px solid #8d8888;
     font-family: sans-serif;
     display: inline-flex;
     flex-direction: column;
-    box-shadow: 3px 5px 6px rgba(0, 0, 0, 0.5);
+    /* box-shadow: 3px 5px 6px rgba(0, 0, 0, 0.5); */
     border-radius: 10px;
     overflow: hidden;
+    padding: 0.5rem;
 }
 .q7Card img{
+    /* width: 80%;
+    margin: 0 auto; */
     height: 65%;
 }
 .q7Card button{
     padding: 0.5rem;
-    background-color: #3454d1;
+    background-color: green;
     border: 1px solid #e8e8e8;
     color: white;
     border-radius: 5px;

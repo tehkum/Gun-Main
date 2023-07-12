@@ -61,7 +61,7 @@ export default function HomePage() {
           })}
       </div>
 
-      <h2 style={{textAlign: 'center'}}>Products</h2>
+      <h1 style={{textAlign: 'center', backgroundColor: "green", color: "white", fontSize: "40px", padding: "30px"}}>Products</h1>
 
       {searchFilter
         ?.reduce(
@@ -75,8 +75,8 @@ export default function HomePage() {
           const { category } = items;
           return (
             <>
-              <div style={{textAlign: 'center', fontWeight: 'bold', fontSize: "25px", background: "green", color: "white", padding: "1rem"}}>{category.toUpperCase()}</div>
-              <div className="home-products" key={category} id={`#${category}`}>
+              <div style={{textAlign: 'center', fontWeight: 'bold', fontSize: "25px", color: "green"}}>{category.toUpperCase()}</div>
+              <div className="home-products" key={category} id={`${category}`}>
                 {productData
                   ?.filter((item) => item.category === category)
                   .map((items) => {

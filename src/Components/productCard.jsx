@@ -19,7 +19,7 @@ export default function Productcard(props) {
       
         <img src={image1} alt="..." />
 
-<Link to={`/product/${_id}`}><div className="q7Cont">
+<Link to={`/product/${_id}`} style={{color: "black", textDecoration: "none"}}><div className="q7Cont">
             <div><h3>{name}</h3>
             <p>{category}</p></div>
             <p>₹ {price}</p>

@@ -69,9 +69,9 @@ const addReviewHandler = async () => {
     <div className="container-product">
       <div className="card-right">
         <img src={image1} alt="..."/>
-        {image1 && <img src={image2} alt="..."/>}
-        <img src={image3} alt="..."/>
-        <img src={image4} alt="..."/>
+        {image2 && <img src={image2} alt="..."/>}
+        {image3 && <img src={image3} alt="..."/>}
+        {image4 && <img src={image4} alt="..."/>}
       </div>
       <div className="card-left">
         <p className="product-type">{category}</p>

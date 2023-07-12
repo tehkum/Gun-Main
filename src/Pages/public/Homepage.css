@@ -1,7 +1,7 @@
 .home-products {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 2em;
     margin: 1rem 2rem;
     justify-content: center;
 }
