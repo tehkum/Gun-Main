@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export default function AddressPage(){
+export default function AddressPage() {
   const [checkoutDetails, setcheckoutDetails] = useState({
     productData: [],
     fullName: "",
@@ -11,27 +11,34 @@ export default function AddressPage(){
     city: "",
     country: "",
     pincode: "",
-  })
+  });
 
   const cartDetails = JSON.parse(localStorage.getItem("cart")) || [];
 
-  useEffect(()=>{
-    checkoutDetails.productData = cartDetails.reduce((acc, items) => [...acc, {productId: items._id, qty: (items.qty ?? 1)}], [])
-    setcheckoutDetails({...checkoutDetails})
-  },[])
+  useEffect(() => {
+    checkoutDetails.productData = cartDetails.reduce(
+      (acc, items) => [...acc, { productId: items._id, qty: items.qty ?? 1 }],
+      []
+    );
+    setcheckoutDetails({ ...checkoutDetails });
+  }, []);
 
   const orderHandler = async () => {
     try {
-        const res = await axios.post("https://teal-vast-blackbuck.cyclic.app/api/order/checkout",{...checkoutDetails},{
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const res = await axios.post(
+        "https://teal-vast-blackbuck.cyclic.app/api/order/checkout",
+        { ...checkoutDetails },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       console.log(res);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -42,9 +49,9 @@ export default function AddressPage(){
     console.log(checkoutDetails);
   };
 
-
-    return <>
-    <div className="login-sec-2">
+  return (
+    <>
+      <div className="login-sec-2">
         <h1>Personal Information</h1>
         <label>
           <input
@@ -86,7 +93,6 @@ export default function AddressPage(){
           ></input>
         </label>
 
-
         <label>
           <input
             type="text"
@@ -117,8 +123,8 @@ export default function AddressPage(){
           />
         </label>
 
-
         <button onClick={orderHandler}>Submit</button>
       </div>
     </>
+  );
 }

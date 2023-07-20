@@ -1,0 +1,15 @@
+.order-sec {
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    align-items: center;
+    gap: 10px
+}
+
+.order-per-box {
+    border: 2px solid black;
+    max-width: 300px;
+    min-width: 300px;
+
+}

@@ -8,8 +8,8 @@ export default function AdminPanel() {
     { name: "Video Management", link: "/admin/video-management" },
   ].map(({ name, link }) => (
     <div key={name}>
-      <NavLink to={link}>{name}</NavLink>
-      <hr />
+      <NavLink to={link} style={{color: "black", textDecoration: "none", margin: "10px"}}>{name}</NavLink>
+      {/* <hr /> */}
     </div>
   ))}</div>
 }
