@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./ProductManage.css";
+import AdminPanel from "../../Components/AdminPanel";
 
 export default function YoutubeManage() {
   const [videos, setVideos] = useState({
@@ -13,15 +14,31 @@ export default function YoutubeManage() {
 
   const videoHandler = async () => {
     try {
-      const res = await fetch("https://teal-vast-blackbuck.cyclic.app/api/admin/", {
-        method: "GET",
-      });
+      const res = await fetch(
+        "https://teal-vast-blackbuck.cyclic.app/api/admin/",
+        {
+          method: "GET",
+        }
+      );
       const data = await res.json();
       setYoutubeVids(data.youtube);
     } catch (error) {
       console.log(error);
     }
   };
+
+  const deleteVideo = async (_id) => {
+    try {
+      const res = await fetch(
+        `https://teal-vast-blackbuck.cyclic.app/api/admin/youtube/${_id}/delete`,
+        { method: "DELETE" }
+      );
+      console.log(await res.json());
+    }
+    catch (error) {
+      console.log(error)
+    }
+  }
 
   useEffect(() => {
     videoHandler();
@@ -37,13 +54,16 @@ export default function YoutubeManage() {
 
   const handleSubmit = async () => {
     try {
-      const res = await fetch("https://teal-vast-blackbuck.cyclic.app/api/admin/youtube/add", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ ...videos }),
-      });
+      const res = await fetch(
+        "https://teal-vast-blackbuck.cyclic.app/api/admin/youtube/add",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ ...videos }),
+        }
+      );
       console.log(await res.json());
     } catch (error) {
       console.log(error);
@@ -54,6 +74,7 @@ export default function YoutubeManage() {
 
   return (
     <div>
+      <AdminPanel />
       <div className="login-sec-2">
         <h1>Add Product</h1>
         <label>
@@ -92,12 +113,9 @@ export default function YoutubeManage() {
         {youtubeVids.map((items) => {
           const { _id, link } = items;
           return (
-            <div key={_id}>
-              <iframe
-                width="420"
-                height="315"
-                src={link}
-              ></iframe>
+            <div key={_id} style={{position: 'relative'}}>
+              <button style={{position: "absolute", top: "10px", left: "10px"}} onClick={()=>deleteVideo(_id)}>X</button>
+              <iframe width="420" height="315" src={link}></iframe>
             </div>
           );
         })}

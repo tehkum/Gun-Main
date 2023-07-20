@@ -3,6 +3,7 @@ import "./ProductManage.css";
 import { useProducts } from "../..";
 import Admincard from "../../Components/AdminCard";
 import axios from "axios";
+import AdminPanel from "../../Components/AdminPanel";
 
 export default function ProductManage() {
   const [formData, setFormData] = useState({
@@ -75,6 +76,7 @@ export default function ProductManage() {
 
   return (
     <div>
+      <AdminPanel />
       <div className="login-sec-2">
         <h1>Add Product</h1>
         <label htmlFor="name">
@@ -90,12 +92,19 @@ export default function ProductManage() {
 
         <label htmlFor="category">
           Category:
-          <select name="category" id="category"
+          <select
+            name="category"
+            id="category"
             value={formData.category}
-            onChange={handleChange}>
-            <option value="Blouse Paper Cutting Pattern">Blouse Paper Cutting Pattern</option>
+            onChange={handleChange}
+          >
+            <option value="Blouse Paper Cutting Pattern">
+              Blouse Paper Cutting Pattern
+            </option>
             <option value="Tailoring Material">Tailoring Material</option>
-            <option value="Dress Paper Cutting Pattern">Dress Paper Cutting Pattern</option>
+            <option value="Dress Paper Cutting Pattern">
+              Dress Paper Cutting Pattern
+            </option>
           </select>
         </label>
 
@@ -230,6 +239,7 @@ export default function ProductManage() {
             description1,
             description2,
             manufactureYear,
+            image1,
             price,
             edition,
             numberOfPages,
@@ -243,6 +253,7 @@ export default function ProductManage() {
               category={category}
               description1={description1}
               description2={description2}
+              image1={image1}
               price={price}
               edition={edition}
               manufactureYear={manufactureYear}

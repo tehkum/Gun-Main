@@ -26,7 +26,7 @@ export default function CartPage() {
           </p>
           {(cart?.length ? (
             cart?.map(
-              ({ _id, name, category, description1, description2, manufactureYear, price, edition, numberOfPages, language }) => (
+              ({ _id, name, category, description1, description2, manufactureYear, price, edition, numberOfPages, language, image1 }) => (
                 <CartCard key={_id}
                 _id={_id}
                 name={name}
@@ -34,6 +34,7 @@ export default function CartPage() {
                 description1={description1}
                 description2={description2}
                 price={price}
+                image1={image1}
                 edition={edition}
                 manufactureYear={manufactureYear}
                 numberOfPages={numberOfPages}

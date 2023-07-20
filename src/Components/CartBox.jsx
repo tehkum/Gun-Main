@@ -17,14 +17,28 @@ import "./Cartcard.css";
 //   );
 // }
 
-export default function CartCard({ _id, name, category, description1, description2, manufactureYear, price, edition, numberOfPages, language }) {
-
-
-
-
+export default function CartCard({
+  _id,
+  name,
+  category,
+  image1,
+  description1,
+  description2,
+  manufactureYear,
+  price,
+  edition,
+  numberOfPages,
+  language,
+}) {
   return (
     <div className="cart-card" key={_id}>
-      <img src="https://picsum.photos/200/300" alt="..." width="200px" height="223.83" className="cart-main-img"/>
+      <img
+        src={image1}
+        alt="..."
+        width="200px"
+        height="223.83"
+        className="cart-main-img"
+      />
       <div className="cart-card1">
         <div className="cart-card-part1">
           <h2>{name}</h2>
@@ -46,15 +60,25 @@ export default function CartCard({ _id, name, category, description1, descriptio
         </div>
       </div>
       <div className="cart-card-part4">
-        {/* <button onClick={() =>cartDispatch({ type: "remove-from-cart", id: id})}> */}
-          {/* <img
+        <button
+          onClick={() => {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            console.log(cart);
+            if (cart.length > 1) {
+              cart?.filter((item) => item._id === _id);
+              localStorage.setItem("cart", JSON.stringify([...cart]));
+            } else {
+              localStorage.removeItem("cart");
+            }
+          }}
+        >
+          <img
             width="20"
-            onClick={()=>setClicked({clicked: !btnClicked.clicked, message: "Item removed"})}
             height="20"
             src="https://img.icons8.com/ios-filled/100/delete-sign--v1.png"
             alt="delete-sign--v1"
           />
-        </button> */}
+        </button>
         {/* <button>
           {wishButton}
         </button> */}
@@ -62,4 +86,3 @@ export default function CartCard({ _id, name, category, description1, descriptio
     </div>
   );
 }
-
