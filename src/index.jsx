@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
@@ -8,7 +8,7 @@ import { ProductProvider, useProducts } from "./Context/ProductProvider.jsx";
 import { CartProvider, useCart } from "./Context/CartProvider.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <Router>
       <AuthProvider>
         <ProductProvider>
@@ -18,7 +18,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </ProductProvider>
       </AuthProvider>
     </Router>
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 
 export { useAuth, useProducts, useCart };
