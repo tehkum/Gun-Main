@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import "./OrderManage.css";
 import { useProducts } from "../../Context/ProductProvider";
-import AdminPanel from "../../Components/AdminPanel";
+import { useNavigate } from "react-router";
 
 export default function OrderManage() {
-  const { orderNo, productData } = useContext(useProducts);
+  const { orderNo } = useContext(useProducts);
+  const navigate = useNavigate();
   console.log(orderNo, "wdf");
 
   // const rows = orderNo.map((orders) =>
@@ -22,21 +23,21 @@ export default function OrderManage() {
 
   return (
     <>
-      <AdminPanel />
       <div className="order-sec">
         {orderNo?.map((row) => (
-          <div key={row._id} className="order-per-box">
-            <div>
-              {row?.productData?.map((item) => (
-                <div key={item.productId}>
-                  {
-                    productData?.find(
-                      (product) => product?._id === item?.productId
-                    )?._id
-                  }
-                </div>
-              ))}
-            </div>
+          <div key={row._id} className="order-per-box" onClick={()=>navigate(`/admin/order/${row._id}`)}>
+            {/* <div>
+              {row?.productData?.map((item) => {
+                const thisProduct = productData?.find(
+                  (product) => product?._id === item?.productId
+                );
+                return (
+                  <div key={item.productId}>
+                    <img src={thisProduct?.image1} alt=".." />
+                  </div>
+                );
+              })}
+            </div> */}
 
             <p>{row.fullName}</p>
             <p>{row.phoneNo}</p>

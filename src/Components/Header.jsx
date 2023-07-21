@@ -2,13 +2,15 @@ import "./Header.css"
 import {icon} from "../img/index";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
-import { useProducts } from "..";
+import { useAuth, useProducts } from "..";
+import AdminPanel from "./AdminPanel";
 
 
 
 export default function Header(){
     const { setSearchWord } = useContext(useProducts)
-
+    const { adminLogin } = useContext(useAuth)
+ 
     const searchHandler = e => setSearchWord(e.target.value)
 
     return <div className="header">
@@ -16,7 +18,7 @@ export default function Header(){
         <input type="search" placeholder="Search" onChange={searchHandler}/>
         <div className="nav-links-main">
         <NavLink to="/cart" className="nav-links">Cart</NavLink>
-        <NavLink to="/login" className="nav-links">Admin Panel</NavLink>
+        {adminLogin ? <AdminPanel/> :<NavLink to="/login" className="nav-links">Admin Panel</NavLink>}
         </div>
     </div>
 }

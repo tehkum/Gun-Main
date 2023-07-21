@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "./ProductManage.css";
-import AdminPanel from "../../Components/AdminPanel";
 
 export default function YoutubeManage() {
   const [videos, setVideos] = useState({
@@ -34,11 +33,10 @@ export default function YoutubeManage() {
         { method: "DELETE" }
       );
       console.log(await res.json());
+    } catch (error) {
+      console.log(error);
     }
-    catch (error) {
-      console.log(error)
-    }
-  }
+  };
 
   useEffect(() => {
     videoHandler();
@@ -74,7 +72,6 @@ export default function YoutubeManage() {
 
   return (
     <div>
-      <AdminPanel />
       <div className="login-sec-2">
         <h1>Add Product</h1>
         <label>
@@ -113,8 +110,13 @@ export default function YoutubeManage() {
         {youtubeVids.map((items) => {
           const { _id, link } = items;
           return (
-            <div key={_id} style={{position: 'relative'}}>
-              <button style={{position: "absolute", top: "10px", left: "10px"}} onClick={()=>deleteVideo(_id)}>X</button>
+            <div key={_id} style={{ position: "relative" }}>
+              <button
+                style={{ position: "absolute", top: "10px", left: "10px" }}
+                onClick={() => deleteVideo(_id)}
+              >
+                X
+              </button>
               <iframe width="420" height="315" src={link}></iframe>
             </div>
           );

@@ -3,7 +3,6 @@ import "./ProductManage.css";
 import { useProducts } from "../..";
 import Admincard from "../../Components/AdminCard";
 import axios from "axios";
-import AdminPanel from "../../Components/AdminPanel";
 
 export default function ProductManage() {
   const [formData, setFormData] = useState({
@@ -76,7 +75,6 @@ export default function ProductManage() {
 
   return (
     <div>
-      <AdminPanel />
       <div className="login-sec-2">
         <h1>Add Product</h1>
         <label htmlFor="name">
