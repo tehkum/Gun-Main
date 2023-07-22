@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import "./Cartcard.css";
+import { useCart } from "../Context/CartProvider";
 
 // export default function CartCard() {
 //   return (
@@ -30,6 +32,8 @@ export default function CartCard({
   numberOfPages,
   language,
 }) {
+  const { clicked } = useContext(useCart); 
+
   return (
     <div className="cart-card" key={_id}>
       <img
@@ -62,8 +66,8 @@ export default function CartCard({
       <div className="cart-card-part4">
         <button
           onClick={() => {
+            clicked();
             const cart = JSON.parse(localStorage.getItem("cart")) || [];
-            console.log(cart);
             if (cart.length > 1) {
               cart?.filter((item) => item._id === _id);
               localStorage.setItem("cart", JSON.stringify([...cart]));

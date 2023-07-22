@@ -21,7 +21,7 @@ export default function ProductManage() {
     language: "",
   });
 
-  const { productData } = useContext(useProducts);
+  const { productData, clickedP } = useContext(useProducts);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -67,6 +67,7 @@ export default function ProductManage() {
           },
         }
       );
+      clickedP()
       console.log(res);
     } catch (error) {
       console.log(error);

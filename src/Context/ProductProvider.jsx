@@ -6,47 +6,51 @@ import PropTypes from "prop-types";
 export const useProducts = createContext();
 
 export function ProductProvider({ children }) {
-  const [ productData, setProductData ] = useState([])
-  const [ isClicked, setClicked ] = useState(false);
-  const [searchWord, setSearchWord ] = useState("");
-  const [ youtubeVideos, setVideos ] = useState([]);
-  const [ orderNo, setOrderNo ] = useState([])
+  const [productData, setProductData] = useState([]);
+  const [isClicked, setClicked] = useState(false);
+  const [searchWord, setSearchWord] = useState("");
+  const [youtubeVideos, setVideos] = useState([]);
+  const [orderNo, setOrderNo] = useState([]);
 
   const fetchData = async () => {
-    const res = await fetch("https://teal-vast-blackbuck.cyclic.app/api/admin/products",{method: 'GET'});
+    const res = await fetch(
+      "https://teal-vast-blackbuck.cyclic.app/api/admin/products",
+      { method: "GET" }
+    );
     const product = await res.json();
     console.log(product);
-    setProductData(product.products);  
-  };  
+    setProductData(product.products);
+  };
 
   const fetchVids = async () => {
-    const res = await fetch("https://teal-vast-blackbuck.cyclic.app/api/admin/",{method: 'GET'});
-    const vids = await res.json()
+    const res = await fetch(
+      "https://teal-vast-blackbuck.cyclic.app/api/admin/",
+      { method: "GET" }
+    );
+    const vids = await res.json();
     setVideos(vids.youtube);
-    setOrderNo(vids.orders)
-  }
-  
-  const clicked = () => {
-    setClicked(!isClicked);
-  }
-  
+    setOrderNo(vids.orders);
+  };
 
-  useEffect(() => {   
+  const clickedP = () => {
+    setClicked(!isClicked);
+  };
+
+  useEffect(() => {
     fetchData();
     fetchVids();
   }, [isClicked]);
 
-  
-  
   return (
     <useProducts.Provider
       value={{
         productData,
         setProductData,
-        clicked,
+        clickedP,
         orderNo,
         youtubeVideos,
-        searchWord, setSearchWord
+        searchWord,
+        setSearchWord,
       }}
     >
       {children}

@@ -12,7 +12,7 @@ export function CartProvider({ children }) {
 
   useEffect(() => {   
     setCart(JSON.parse(localStorage.getItem("cart")) || [])
-  }, []);
+  }, [isClicked]);
 
   const clicked = () => {
     setClicked(!isClicked);
