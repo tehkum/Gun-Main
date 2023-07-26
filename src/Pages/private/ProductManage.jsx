@@ -67,7 +67,7 @@ export default function ProductManage() {
           },
         }
       );
-      clickedP()
+      clickedP();
       console.log(res);
     } catch (error) {
       console.log(error);
@@ -97,6 +97,9 @@ export default function ProductManage() {
             value={formData.category}
             onChange={handleChange}
           >
+            <option value="none" selected>
+              None
+            </option>
             <option value="Blouse Paper Cutting Pattern">
               Blouse Paper Cutting Pattern
             </option>
