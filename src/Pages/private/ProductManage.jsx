@@ -98,7 +98,7 @@ export default function ProductManage() {
             onChange={handleChange}
           >
             <option value="none" selected>
-              None
+              --
             </option>
             <option value="Blouse Paper Cutting Pattern">
               Blouse Paper Cutting Pattern
