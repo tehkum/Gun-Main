@@ -67,7 +67,11 @@ export default function Productcard(props) {
       >
         Add to cart
       </button>
-      <button className="q7-btn">Buy Now</button>
+      <button className="q7-btn" onClick={() => {
+          setCart();
+          clicked();
+          navigate("/cart")
+        }}>Buy Now</button>
     </div>
   );
 }
