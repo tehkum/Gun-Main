@@ -13,7 +13,11 @@ export default function HomePage() {
 
   // };
 
-  const searchFilter = productData.filter(item=> item.name?.toLowerCase().includes(searchWord.toLowerCase()) || item.category?.toLowerCase().includes(searchWord.toLowerCase()))
+  const searchFilter = productData.filter(
+    (item) =>
+      item.name?.toLowerCase().includes(searchWord.toLowerCase()) ||
+      item.category?.toLowerCase().includes(searchWord.toLowerCase())
+  );
 
   return (
     <>
@@ -57,11 +61,27 @@ export default function HomePage() {
           )
           .map((items) => {
             const { category } = items;
-            return <CategoryBox key={category} categoryName={category} />;
+            return (
+              <CategoryBox
+                key={category}
+                categoryName={category}
+                isTrue={true}
+              />
+            );
           })}
       </div>
 
-      <h1 style={{textAlign: 'center', backgroundColor: "#38d02a", color: "white", fontSize: "40px", padding: "30px"}}>Products</h1>
+      <h1
+        style={{
+          textAlign: "center",
+          backgroundColor: "#38d02a",
+          color: "white",
+          fontSize: "40px",
+          padding: "30px",
+        }}
+      >
+        Products
+      </h1>
 
       {searchFilter
         ?.reduce(
@@ -75,7 +95,16 @@ export default function HomePage() {
           const { category } = items;
           return (
             <>
-              <div style={{textAlign: 'center', fontWeight: 'bold', fontSize: "25px", color: "green"}}>{category.toUpperCase()}</div>
+              <div
+                style={{
+                  textAlign: "center",
+                  fontWeight: "bold",
+                  fontSize: "25px",
+                  color: "green",
+                }}
+              >
+                {category.toUpperCase()}
+              </div>
               <div className="home-products" key={category} id={`${category}`}>
                 {productData
                   ?.filter((item) => item.category === category)

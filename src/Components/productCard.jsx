@@ -25,6 +25,14 @@ export default function Productcard(props) {
     }
   };
 
+  const convertString = (str) => {
+    return str
+      .split("")
+      .filter((char, index) => index <= 36)
+      .join("")
+      .concat("...");
+  };
+
   const redirectTo = () => {
     navigate(`/product/${_id}`);
   };
@@ -39,15 +47,19 @@ export default function Productcard(props) {
       > */}
       <div className="q7Cont" onClick={redirectTo}>
         <div>
-          <h3>{name}</h3>
+          <h3
+            className="name-prod"
+            style={{ maxHeight: "100px", overflow: "auto", cursor: "pointer" }}
+          >
+            {convertString(name)}
+          </h3>
           <p>{category}</p>
         </div>
         <p>₹ {price}</p>
       </div>
       {/* </Link> */}
-      <button className="q7-view-btn">View Product</button>
       <button
-        className="q7-btn"
+        className="q7-view-btn"
         onClick={() => {
           setCart();
           clicked();
@@ -55,6 +67,7 @@ export default function Productcard(props) {
       >
         Add to cart
       </button>
+      <button className="q7-btn">Buy Now</button>
     </div>
   );
 }
