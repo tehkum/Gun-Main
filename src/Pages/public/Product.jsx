@@ -1,16 +1,17 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import "./Product.css";
-import { useProducts } from "../..";
+import { useCart, useProducts } from "../..";
 import axios from "axios";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 export default function ProductPage() {
   const { productId } = useParams();
   const [specificProduct, setProduct] = useState({});
+  const { clicked } = useContext(useCart);
   const { productData } = useContext(useProducts);
   const [reviewData, setReviewData] = useState([]);
-  const [ imgSelect, setImgSelect] = useState("");
+  const [imgSelect, setImgSelect] = useState("");
 
   const [review, setReview] = useState({
     name: "",
@@ -67,6 +68,21 @@ export default function ProductPage() {
     language,
   } = specificProduct;
 
+  const setCart = () => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const items = cart?.find((item) => item._id === _id);
+    if (items) {
+      // items.qty =
+      //   (cart?.find((item) => item._id === _id)?.qty ?? 1) + 1;
+      items.qty += 1;
+      localStorage.setItem("cart", JSON.stringify([...cart]));
+    } else {
+      localStorage.setItem(
+        "cart",
+        JSON.stringify([...cart, { ...specificProduct, qty: 1 }])
+      );
+    }
+  };
 
   const addReviewHandler = async () => {
     const res = await fetch(
@@ -103,12 +119,34 @@ export default function ProductPage() {
           {image4 && <img src={image4} alt="..." />}
         </div> */}
         <div className="card-right">
-          {imgSelect ? <img src={imgSelect} alt="..." className="img-main"/> : <img src={image1} className="img-main" alt="..." />}
+          {imgSelect ? (
+            <img src={imgSelect} alt="..." className="img-main" />
+          ) : (
+            <img src={image1} className="img-main" alt="..." />
+          )}
           <div className="image-selector">
-            <img src={image1} alt="..." onClick={()=>setImgSelect(image1)}/>
-            {image2 && <img src={image2} alt="..." onClick={()=>setImgSelect(image2)}/>}
-            {image3 && <img src={image3} alt="..." onClick={()=>setImgSelect(image3)}/>}
-            {image4 && <img src={image4} alt="..." onClick={()=>setImgSelect(image4)}/>}
+            <img src={image1} alt="..." onClick={() => setImgSelect(image1)} />
+            {image2 && (
+              <img
+                src={image2}
+                alt="..."
+                onClick={() => setImgSelect(image2)}
+              />
+            )}
+            {image3 && (
+              <img
+                src={image3}
+                alt="..."
+                onClick={() => setImgSelect(image3)}
+              />
+            )}
+            {image4 && (
+              <img
+                src={image4}
+                alt="..."
+                onClick={() => setImgSelect(image4)}
+              />
+            )}
           </div>
         </div>
         <div className="card-left">
@@ -117,7 +155,7 @@ export default function ProductPage() {
           <p className="product-price-desc">
             <b>MRP in Indian currency:</b>
           </p>
-          <p className="product-price">{price} per pair</p>
+          <h2 className="product-price">{price}₹</h2>
           <p className="product-tax">[Inclusive of all taxes]</p>
           <p className="product-desc">{description1}</p>
           <p className="product-desc">{description2}</p>
@@ -149,8 +187,25 @@ export default function ProductPage() {
             >
               <WhatsAppIcon />
             </button>
-            <button className="cart-btn">Add to cart</button>
-            <button className="wishlist-btn">Order now</button>
+            <button
+              className="cart-btn"
+              onClick={() => {
+                setCart();
+                clicked();
+              }}
+            >
+              Add to cart
+            </button>
+            <button
+              className="wishlist-btn"
+              onClick={() => {
+                setCart();
+                clicked();
+                navigate("/cart");
+              }}
+            >
+              Order now
+            </button>
           </div>
         </div>
       </div>

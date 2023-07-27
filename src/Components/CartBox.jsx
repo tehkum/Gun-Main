@@ -16,7 +16,7 @@ export default function CartCard({
   numberOfPages,
   language,
 }) {
-  const { clicked } = useContext(useCart);
+  const { clicked, decreaseQty } = useContext(useCart);
 
   const setCart = () => {
     const props = {
@@ -68,20 +68,28 @@ export default function CartCard({
           <p>₹{price}</p>
         </div>
         <div className="cart-card-part2">
-          <p style={{color: "#666"}}>{category}</p>
+          <p style={{ color: "#666" }}>{category}</p>
         </div>
         <div className="cart-card-part3">
           <button
-          onClick={() => {
-            setCart();
-            clicked();
-          }}
-          >+</button>
+            onClick={() => {
+              setCart();
+              clicked();
+            }}
+          >
+            +
+          </button>
           <p>{qty ?? 1}</p>
           <button
-          // disabled={quantityCheck}
-          // onClick={() => decrementCartHandler({ type: "decrementCart", id: id }, cartDispatch)}
-          >-</button>
+            // disabled={quantityCheck}
+            // onClick={() => decrementCartHandler({ type: "decrementCart", id: id }, cartDispatch)}
+            onClick={() => {
+              decreaseQty(_id);
+              clicked();
+            }}
+          >
+            -
+          </button>
         </div>
       </div>
       <div className="cart-card-part4">

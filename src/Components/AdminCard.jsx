@@ -15,6 +15,14 @@ export default function Admincard(props) {
 
   const { clickedP } = useContext(useProducts);
 
+  const convertString = (str) => {
+    return str
+      .split("")
+      .filter((char, index) => index <= 36)
+      .join("")
+      .concat("...");
+  };
+
   const deleteHandler = async () => {
     const res = await fetch(
       `https://teal-vast-blackbuck.cyclic.app/api/admin/products/${_id}/delete`,
@@ -39,7 +47,7 @@ export default function Admincard(props) {
       >
         <div className="q7Cont">
           <div>
-            <h3>{name}</h3>
+            <h3>{convertString(name)}</h3>
             <p>{category}</p>
           </div>
           <p>₹ {price}</p>

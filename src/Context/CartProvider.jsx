@@ -17,12 +17,24 @@ export function CartProvider({ children }) {
   const clicked = () => {
     setClicked(!isClicked);
   }
+
+  const decreaseQty = (prodId) => {
+    const cartList = JSON.parse(localStorage.getItem("cart")) || [];
+    if(cartList.find(item=> item._id === prodId)?.qty > 1) {
+      cartList.find(item=> item._id === prodId).qty -= 1;
+      localStorage.setItem("cart", JSON.stringify(cartList));
+    } else {
+      cartList.filter(item=> item._id !== prodId)
+      localStorage.setItem("cart", JSON.stringify(cartList));
+    }
+  }
   
   return (
     <useCart.Provider
       value={{
         cart,
-        clicked
+        clicked,
+        decreaseQty
       }}
     >
       {children}
