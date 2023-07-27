@@ -149,8 +149,9 @@
     }
 
     .img-main {
-        max-width: 500px;
-        max-height: 570px;
+        max-width: 450px;
+        max-height: 500px;
+        object-fit: contain;
     }
 
     .card-right {
