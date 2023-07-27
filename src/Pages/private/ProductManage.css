@@ -18,11 +18,16 @@
     border-radius: 15px;
 }
 
+.error {
+    color: red;
+}
+
 .login-sec-2 label {
     border: 1px solid black
 }
 
-.login-sec-2 input, .login-sec-2 textarea {
+.login-sec-2 input,
+.login-sec-2 textarea {
     border: none
 }
 
@@ -55,7 +60,9 @@
         width: 95vw;
     }
 
-    .login-sec-2 input, .login-sec-2 textarea, .login-sec-2 select {
+    .login-sec-2 input,
+    .login-sec-2 textarea,
+    .login-sec-2 select {
         width: 90%;
         padding: 0.5rem 1rem;
     }
@@ -72,7 +79,9 @@
         width: 350px;
     }
 
-    .login-sec-2 input, .login-sec-2 textarea, .login-sec-2 select {
+    .login-sec-2 input,
+    .login-sec-2 textarea,
+    .login-sec-2 select {
         width: 90%;
         padding: 0.5rem 1rem;
     }

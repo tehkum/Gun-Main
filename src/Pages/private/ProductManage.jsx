@@ -5,7 +5,7 @@ import Admincard from "../../Components/AdminCard";
 import axios from "axios";
 
 export default function ProductManage() {
-  const [formData, setFormData] = useState({
+  const initialFormData = {
     name: "",
     category: "",
     price: "",
@@ -19,7 +19,9 @@ export default function ProductManage() {
     edition: "",
     numberOfPages: "",
     language: "",
-  });
+  };
+  const [formData, setFormData] = useState(initialFormData);
+  const [errors, setErrors] = useState({});
 
   const { productData, clickedP } = useContext(useProducts);
 
@@ -57,20 +59,61 @@ export default function ProductManage() {
   };
 
   const handleSubmit = async () => {
-    try {
-      const res = await axios.post(
-        "https://teal-vast-blackbuck.cyclic.app/api/admin/products/add",
-        { ...formData },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      clickedP();
-      console.log(res);
-    } catch (error) {
-      console.log(error);
+    const validationErrors = {};
+    // Perform form validation checks
+    if (!formData.name) {
+      validationErrors.name = "Name is required.";
+    }
+    if (formData.category === "none") {
+      validationErrors.category = "Please select a category.";
+    }
+    if (!formData.price) {
+      validationErrors.price = "Price is required.";
+    }
+    // Add more validation checks for other fields if needed
+    if (!formData.description1) {
+      validationErrors.description1 = "Please select a description";
+    }
+    if (!formData.description2) {
+      validationErrors.description2 = "Please select a description";
+    }
+    if (!formData.image1) {
+      validationErrors.image1 = "Please select a image";
+    }
+    if (!formData.manufactureYear) {
+      validationErrors.manufactureYear = "Manufacture Year Required";
+    }
+    if (!formData.edition) {
+      validationErrors.edition = "Please select a edition";
+    }
+    if (!formData.numberOfPages) {
+      validationErrors.numberOfPages = "Please write number of pages";
+    }
+    if (!formData.language) {
+      validationErrors.language = "Please select a language";
+    }
+
+    // If there are validation errors, set the state and prevent form submission
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+    } else {
+      try {
+        const res = await axios.post(
+          "https://teal-vast-blackbuck.cyclic.app/api/admin/products/add",
+          { ...formData },
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        clickedP();
+        console.log(res);
+      } catch (error) {
+        console.log(error);
+      }
+      setFormData(initialFormData);
+      setErrors({});
     }
   };
 
@@ -87,6 +130,7 @@ export default function ProductManage() {
             onChange={handleChange}
             placeholder="Name"
           />
+          {errors.name && <span className="error">{errors.name}</span>}
         </label>
 
         <label htmlFor="category">
@@ -108,6 +152,7 @@ export default function ProductManage() {
               Dress Paper Cutting Pattern
             </option>
           </select>
+          {errors.category && <span className="error">{errors.category}</span>}
         </label>
 
         <label htmlFor="image1">
@@ -120,6 +165,7 @@ export default function ProductManage() {
             onChange={imageHandler}
             // placeholder="Category"
           />
+          {errors.image1 && <span className="error">{errors.image1}</span>}
         </label>
         <label htmlFor="image2">
           Image 1
@@ -164,6 +210,7 @@ export default function ProductManage() {
             onChange={handleChange}
             placeholder="Price"
           />
+          {errors.price && <span className="error">{errors.price}</span>}
         </label>
 
         <label htmlFor="description1">
@@ -174,6 +221,9 @@ export default function ProductManage() {
             onChange={handleChange}
             placeholder="Description 1"
           ></textarea>
+          {errors.description1 && (
+            <span className="error">{errors.description1}</span>
+          )}
         </label>
 
         <label htmlFor="description2">
@@ -184,6 +234,9 @@ export default function ProductManage() {
             onChange={handleChange}
             placeholder="Description 2"
           ></textarea>
+          {errors.description2 && (
+            <span className="error">{errors.description2}</span>
+          )}
         </label>
 
         <label htmlFor="manYear">
@@ -195,6 +248,9 @@ export default function ProductManage() {
             onChange={handleChange}
             placeholder="Manufacturing year"
           />
+          {errors.manufactureYear && (
+            <span className="error">{errors.manufactureYear}</span>
+          )}
         </label>
 
         <label htmlFor="edition">
@@ -206,6 +262,7 @@ export default function ProductManage() {
             onChange={handleChange}
             placeholder="Edition"
           />
+          {errors.edition && <span className="error">{errors.edition}</span>}
         </label>
 
         <label htmlFor="nop">
@@ -217,6 +274,9 @@ export default function ProductManage() {
             onChange={handleChange}
             placeholder="Number of pages"
           />
+          {errors.numberOfPages && (
+            <span className="error">{errors.numberOfPages}</span>
+          )}
         </label>
 
         <label htmlFor="lang">
@@ -228,6 +288,7 @@ export default function ProductManage() {
             onChange={handleChange}
             placeholder="Language"
           />
+          {errors.language && <span className="error">{errors.language}</span>}
         </label>
 
         <button onClick={handleSubmit}>Submit</button>
