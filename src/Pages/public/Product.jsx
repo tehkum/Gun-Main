@@ -10,6 +10,8 @@ export default function ProductPage() {
   const [specificProduct, setProduct] = useState({});
   const { productData } = useContext(useProducts);
   const [reviewData, setReviewData] = useState([]);
+  const [ imgSelect, setImgSelect] = useState("");
+
   const [review, setReview] = useState({
     name: "",
     comment: "",
@@ -65,6 +67,7 @@ export default function ProductPage() {
     language,
   } = specificProduct;
 
+
   const addReviewHandler = async () => {
     const res = await fetch(
       `https://teal-vast-blackbuck.cyclic.app/api/products/review`,
@@ -83,21 +86,30 @@ export default function ProductPage() {
     // }).then((response) => console.log(response)).catch(e=>console.log(e))
   };
 
-  const sendMessageHandler = () => {
-    window.open(
-      "https://wa.me/8770840787?text=I'm%20interested%20in%20your%20car%20for%20sale",
-      "_blank"
-    );
-  };
+  // const sendMessageHandler = () => {
+  //   window.open(
+  //     "https://wa.me/8770840787?text=I'm%20interested%20in%20your%20car%20for%20sale",
+  //     "_blank"
+  //   );
+  // };
 
   return (
     <>
       <div className="container-product">
-        <div className="card-right">
+        {/* <div className="card-right">
           <img src={image1} alt="..." />
           {image2 && <img src={image2} alt="..." />}
           {image3 && <img src={image3} alt="..." />}
           {image4 && <img src={image4} alt="..." />}
+        </div> */}
+        <div className="card-right">
+          {imgSelect ? <img src={imgSelect} alt="..." className="img-main"/> : <img src={image1} className="img-main" alt="..." />}
+          <div className="image-selector">
+            <img src={image1} alt="..." onClick={()=>setImgSelect(image1)}/>
+            {image2 && <img src={image2} alt="..." onClick={()=>setImgSelect(image2)}/>}
+            {image3 && <img src={image3} alt="..." onClick={()=>setImgSelect(image3)}/>}
+            {image4 && <img src={image4} alt="..." onClick={()=>setImgSelect(image4)}/>}
+          </div>
         </div>
         <div className="card-left">
           <p className="product-type">{category}</p>
