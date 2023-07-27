@@ -20,15 +20,19 @@ export default function AllOrders() {
         border: "1px solid black",
         display: "flex",
         flexDirection: "column",
-        padding: "1rem"
+        padding: "1rem",
+        // alignItems: "center",
       }}
     >
-        <h1>Order Details</h1>
-      <div style={{
-        display: "flex",
-        flexWrap: "wrap",
-        gap: "1em"
-      }}>
+      <h1>Order Details</h1>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "1em",
+          justifyContent: "center",
+        }}
+      >
         {thisOrder?.productData?.map((item, index) => {
           const thisProduct = productData?.find(
             (product) => product?._id === item?.productId
@@ -38,12 +42,16 @@ export default function AllOrders() {
               key={item.productId}
               onClick={() => navigate(`/product/${item?.productId}`)}
               style={{
-                border: '1px solid black',
-                width: "300px"
+                border: "1px solid black",
+                width: "300px",
               }}
             >
               <h2>product {index}</h2>
-              <img src={thisProduct?.image1} alt=".." style={{width: "100%"}}/>
+              <img
+                src={thisProduct?.image1}
+                alt=".."
+                style={{ width: "100%" }}
+              />
               <h2>{thisProduct?.name}</h2>
               <p>
                 <b>{thisProduct?.price}</b>
