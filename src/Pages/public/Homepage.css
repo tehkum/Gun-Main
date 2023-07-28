@@ -11,8 +11,64 @@
     width: 100%;
     overflow: auto;
     gap: 10px;
+    /* display: absolute; */
     background-color: greenyellow;
-    /* padding: 0.5rem; */padding: 10px 0;
+    /* padding: 0.5rem; */
+    padding: 10px 0;
+}
+
+.category-design {
+    max-width: 100%;
+    height: 200px;
+    background-color: #bd99f8;
+    position: relative;
+    overflow: auto;
+}
+
+.category-content {
+    /* position: absolute; */
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 10px;
+    bottom: 5px;
+    /* justify-content: center;
+     */
+    left: 150px;
+    /* align-items: center; */
+}
+
+.category-heading {
+    position: absolute;
+    font-size: 32px;
+    color: white;
+    font-family: "sans-serif";
+}
+
+.category-trian {
+    position: absolute;
+    background-color: #9b69ee;
+    width: 150px;
+    right: -50px;
+    height: 150px;
+    transform: rotate(45deg);
+}
+
+.category-trian1 {
+    position: absolute;
+    background-color: #eee069;
+    width: 150px;
+    right: -80px;
+    height: 150px;
+    transform: rotate(45deg);
+}
+
+.category-trian2 {
+    position: absolute;
+    background-color: #ee9c69;
+    width: 150px;
+    right: -110px;
+    height: 150px;
+    transform: rotate(45deg);
 }
 
 
@@ -22,10 +78,32 @@
         margin: 10px;
         justify-content: center;
     }
+   .category-trian, .category-trian1, .category-trian2 {
+    display: none;
+   }
 }
 
 @media (min-width: 768px) {
     .home-products {
         margin: 1rem 2rem;
+    }
+    .category-content {
+        position: absolute;
+        display: flex;
+        /* flex-wrap: wrap; */
+        gap: 10px;
+        bottom: 5px;
+        /* justify-content: center;
+         */
+        left: 150px;
+        /* align-items: center; */
+    }
+    .category-design {
+        /* max-width: 100%;
+        height: 150px;
+        background-color: #bd99f8;
+        position: relative; */
+        height: 150px;
+        overflow: hidden;
     }
 }

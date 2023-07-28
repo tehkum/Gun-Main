@@ -5,6 +5,7 @@ import CategoryBox from "../../Components/CategoryBox";
 import ProductCard from "../../Components/productCard";
 import "./Homepage.css";
 import { useProducts } from "../..";
+// import { catbox } from "../../img";
 
 export default function HomePage() {
   const { productData, searchWord } = useContext(useProducts);
@@ -49,7 +50,9 @@ export default function HomePage() {
           </div>
         </Carousel>
       </div>
-      <div className="home-category">
+      <div className="category-design">
+        <div className="category-heading">CATEGORY</div>
+        <div className="category-content">
         <CategoryBox categoryName={"Youtube"} />
         {productData
           ?.reduce(
@@ -70,6 +73,31 @@ export default function HomePage() {
             );
           })}
       </div>
+        <div className="category-trian"></div>
+        <div className="category-trian1"></div>
+        <div className="category-trian2"></div>
+      </div>
+      {/* <div className="home-category">
+        <CategoryBox categoryName={"Youtube"} />
+        {productData
+          ?.reduce(
+            (acc, { category }) =>
+              acc.find((item) => item.category === category)
+                ? [...acc]
+                : [...acc, { category }],
+            []
+          )
+          .map((items) => {
+            const { category } = items;
+            return (
+              <CategoryBox
+                key={category}
+                categoryName={category}
+                isTrue={true}
+              />
+            );
+          })}
+      </div> */}
 
       <h1
         style={{

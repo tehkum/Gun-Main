@@ -1,15 +1,20 @@
 .category-box {
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 150px;
     align-items: center;
     color: black;
     text-decoration: none ;
 }
+.category-box p {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
 .category-box img{
     border-radius: 4rem;
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
 }
 
 @media (max-width: 768px) {
