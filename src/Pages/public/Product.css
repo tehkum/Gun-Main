@@ -128,8 +128,9 @@
 
     .card-right {
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
+        gap: 2em;
     }
 
     .img-main {
