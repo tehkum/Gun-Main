@@ -119,12 +119,7 @@ export default function ProductPage() {
           {image4 && <img src={image4} alt="..." />}
         </div> */}
         <div className="card-right">
-          {imgSelect ? (
-            <img src={imgSelect} alt="..." className="img-main" />
-          ) : (
-            <img src={image1} className="img-main" alt="..." />
-          )}
-          <div className="image-selector">
+        <div className="image-selector">
             <img src={image1} alt="..." onClick={() => setImgSelect(image1)} />
             {image2 && (
               <img
@@ -148,6 +143,11 @@ export default function ProductPage() {
               />
             )}
           </div>
+          {imgSelect ? (
+            <img src={imgSelect} alt="..." className="img-main" />
+          ) : (
+            <img src={image1} className="img-main" alt="..." />
+          )}
         </div>
         <div className="card-left">
           <p className="product-type">{category}</p>
