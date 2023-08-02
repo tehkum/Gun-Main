@@ -42,6 +42,7 @@
     font-size: 32px;
     color: white;
     font-family: "sans-serif";
+    top: 50px;
 }
 
 .category-trian {
@@ -78,15 +79,19 @@
         margin: 10px;
         justify-content: center;
     }
-   .category-trian, .category-trian1, .category-trian2 {
-    display: none;
-   }
+
+    .category-trian,
+    .category-trian1,
+    .category-trian2 {
+        display: none;
+    }
 }
 
 @media (min-width: 768px) {
     .home-products {
         margin: 1rem 2rem;
     }
+
     .category-content {
         position: absolute;
         display: flex;
@@ -98,6 +103,7 @@
         left: 150px;
         /* align-items: center; */
     }
+
     .category-design {
         /* max-width: 100%;
         height: 150px;

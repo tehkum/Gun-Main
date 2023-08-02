@@ -3,16 +3,21 @@ import "./Cartpage.css";
 import CartCard from "../../Components/CartBox";
 import { useCart } from "../..";
 import { useNavigate } from "react-router";
+import { useState } from "react";
+import { useEffect } from "react";
 
 export default function CartPage() {
   const { cart } = useContext(useCart);
+  const [couponCode, setCoupon] = useState("");
   const navigate = useNavigate();
+  const [couponCodes, setCoupons] = useState([]);
+  const [discountPrice, setDiscPrice] = useState(0);
 
   const wayToCheckout = () => {
     navigate("/address");
   };
 
-  const totalPrice = cart.reduce((acc, { price }) => +acc + +price, 0);
+  let totalPrice = cart.reduce((acc, { price }) => +acc + +price, 0);
 
   const convertString = (str, num) => {
     return str
@@ -22,13 +27,50 @@ export default function CartPage() {
       .concat("...");
   };
 
+  const coupons = async () => {
+    try {
+      const res = await fetch(
+        "https://teal-vast-blackbuck.cyclic.app/api/admin/",
+        {
+          method: "GET",
+        }
+      );
+      const data = await res.json();
+      setCoupons(data.coupon);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    coupons();
+  }, []);
+
+  const couponHandler = (e) => {
+    setCoupon(e.target.value);
+  };
+
+  const couponValidate = () => {
+    let isCoupon = couponCodes.find((coup) => coup.couponCode === couponCode);
+    console.log(isCoupon);
+    if (isCoupon) {
+      if (isCoupon.amount) {
+        setDiscPrice(totalPrice - +isCoupon.amount);
+        console.log(totalPrice);
+      } else if (isCoupon.discount) {
+        setDiscPrice(totalPrice - totalPrice * (+isCoupon.discount / 100));
+        console.log(totalPrice);
+      }
+    }
+  };
+
   return (
     <>
       <div className="cartpage">
         <div className="left-cart-area">
           <h1>Your Cart</h1>
           <p>
-            TOTAL [{cart?.length ?? 0}] <b>₹{totalPrice}</b>
+            TOTAL [{cart?.length ?? 0}] <b>₹{discountPrice ? discountPrice : totalPrice}</b>
           </p>
           {cart?.length
             ? cart?.map(
@@ -70,6 +112,13 @@ export default function CartPage() {
             PROCEED TO CHECKOUT
           </button>
           <h1>Your Cart</h1>
+          <div>
+            <label>
+              Coupon Code:{" "}
+              <input type="text" name="couponCode" onChange={couponHandler} />
+            </label>
+            <button onClick={couponValidate}>Submit</button>
+          </div>
           <div className="sec2-cart-right">
             <p>Delivery</p>
             <p>FREE</p>
@@ -82,7 +131,7 @@ export default function CartPage() {
               </p>
               <p>[Inclusive of all taxes]</p>
             </div>
-            <p>₹{totalPrice}</p>
+            <p>₹{discountPrice ? discountPrice : totalPrice}</p>
           </div>
           <ul>
             {cart?.map(({ name, price, _id, qty = 1 }) => (

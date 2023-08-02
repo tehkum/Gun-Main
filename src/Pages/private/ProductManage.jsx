@@ -293,6 +293,14 @@ export default function ProductManage() {
 
         <button onClick={handleSubmit}>Submit</button>
       </div>
+      <div className="coupon-Register">
+        <label>
+          Coupon Code: <input type="text" />
+        </label>
+        <label>
+          discount: <input type="number" />
+        </label>
+      </div>
       <div className="product-display">
         {productData?.map((items) => {
           const {

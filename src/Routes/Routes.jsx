@@ -13,6 +13,7 @@ import OrderManage from "../Pages/private/OrderManage";
 import ProductManage from "../Pages/private/ProductManage";
 import YoutubeManage from "../Pages/private/YoutubeManage";
 import YoutubeVids from "../Pages/public/Youtubevideos";
+import CouponManage from "../Pages/private/CouponManage";
 
 export default function AllRoutes() {
   return (
@@ -32,6 +33,7 @@ export default function AllRoutes() {
       <Route path="/admin/order-management" element={<OrderManage />} />
       <Route path="/admin/product-management" element={<ProductManage />} />
       <Route path="/admin/video-management" element={<YoutubeManage />} />
+      <Route path="/admin/coupon-management" element={<CouponManage />} />
     </Routes>
   );
 }
