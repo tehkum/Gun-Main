@@ -5,14 +5,10 @@ import CategoryBox from "../../Components/CategoryBox";
 import ProductCard from "../../Components/productCard";
 import "./Homepage.css";
 import { useProducts } from "../..";
-import { prodBox } from "../../img";
+import { freeDel, prodBox } from "../../img";
 
 export default function HomePage() {
   const { productData, searchWord } = useContext(useProducts);
-
-  // const addProduct = () => {
-
-  // };
 
   const searchFilter = productData.filter(
     (item) =>
@@ -22,6 +18,7 @@ export default function HomePage() {
 
   return (
     <>
+
       <div className="home-carousel">
         <Carousel>
           <div className="home-carousel-layout">
@@ -50,6 +47,8 @@ export default function HomePage() {
           </div>
         </Carousel>
       </div>
+      <marquee direction="right"><img src={freeDel} alt="free delivery" width="300"/></marquee>
+
       <div className="category-design">
         <div className="category-heading">CATEGORY</div>
         <div className="category-content">
