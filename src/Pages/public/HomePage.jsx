@@ -5,7 +5,7 @@ import CategoryBox from "../../Components/CategoryBox";
 import ProductCard from "../../Components/productCard";
 import "./Homepage.css";
 import { useProducts } from "../..";
-// import { catbox } from "../../img";
+import { prodBox } from "../../img";
 
 export default function HomePage() {
   const { productData, searchWord } = useContext(useProducts);
@@ -53,26 +53,26 @@ export default function HomePage() {
       <div className="category-design">
         <div className="category-heading">CATEGORY</div>
         <div className="category-content">
-        <CategoryBox categoryName={"Youtube"} />
-        {productData
-          ?.reduce(
-            (acc, { category }) =>
-              acc.find((item) => item.category === category)
-                ? [...acc]
-                : [...acc, { category }],
-            []
-          )
-          .map((items) => {
-            const { category } = items;
-            return (
-              <CategoryBox
-                key={category}
-                categoryName={category}
-                isTrue={true}
-              />
-            );
-          })}
-      </div>
+          <CategoryBox categoryName={"Youtube Tutorials"} />
+          {productData
+            ?.reduce(
+              (acc, { category }) =>
+                acc.find((item) => item.category === category)
+                  ? [...acc]
+                  : [...acc, { category }],
+              []
+            )
+            .map((items) => {
+              const { category } = items;
+              return (
+                <CategoryBox
+                  key={category}
+                  categoryName={category}
+                  isTrue={true}
+                />
+              );
+            })}
+        </div>
         <div className="category-trian"></div>
         <div className="category-trian1"></div>
         <div className="category-trian2"></div>
@@ -102,7 +102,8 @@ export default function HomePage() {
       <h1
         style={{
           textAlign: "center",
-          backgroundColor: "#38d02a",
+          // backgroundColor: "#38d02a",
+          background: `url(${prodBox})`,
           color: "white",
           fontSize: "40px",
           padding: "30px",

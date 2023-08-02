@@ -70,7 +70,8 @@ export default function CartPage() {
         <div className="left-cart-area">
           <h1>Your Cart</h1>
           <p>
-            TOTAL [{cart?.length ?? 0}] <b>₹{discountPrice ? discountPrice : totalPrice}</b>
+            TOTAL [{cart?.length ?? 0}]{" "}
+            <b>₹{discountPrice ? discountPrice : totalPrice}</b>
           </p>
           {cart?.length
             ? cart?.map(
@@ -109,7 +110,7 @@ export default function CartPage() {
         </div>
         <div className="Right-cart-area">
           <button className="btn btn-primary" onClick={wayToCheckout}>
-            PROCEED TO CHECKOUT
+            Buy | खरीदें
           </button>
           <h1>Your Cart</h1>
           <div>
