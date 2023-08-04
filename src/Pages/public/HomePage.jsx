@@ -47,10 +47,10 @@ export default function HomePage() {
           </div>
         </Carousel>
       </div>
-      <marquee direction="right"><img src={freeDel} alt="free delivery" width="300"/></marquee>
+      <marquee direction="right" className="sec-free-del"><img src={freeDel} alt="free delivery" className="free-del"/></marquee>
 
       <div className="category-design">
-        <div className="category-heading">CATEGORY</div>
+        {/* <div className="category-heading">CATEGORY</div> */}
         <div className="category-content">
           <CategoryBox categoryName={"Youtube Tutorials"} />
           {productData

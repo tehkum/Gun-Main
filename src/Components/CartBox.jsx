@@ -96,10 +96,10 @@ export default function CartCard({
         <button
           onClick={() => {
             clicked();
-            const cart = JSON.parse(localStorage.getItem("cart")) || [];
-            if (cart.length > 1) {
-              cart?.filter((item) => item._id === _id);
-              localStorage.setItem("cart", JSON.stringify([...cart]));
+            let cart = JSON.parse(localStorage.getItem("cart")) ?? [];
+            cart = cart.filter((item) => item._id !== _id);
+            if (cart.length > 0) {
+              localStorage.setItem("cart", JSON.stringify(cart));
             } else {
               localStorage.removeItem("cart");
             }

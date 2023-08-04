@@ -17,7 +17,10 @@ export default function CartPage() {
     navigate("/address");
   };
 
-  let totalPrice = cart.reduce((acc, { price }) => +acc + +price, 0);
+  let totalPrice = cart.reduce(
+    (acc, { price, qty = 1 }) => (+acc + +price) * qty,
+    0
+  );
 
   const convertString = (str, num) => {
     return str
