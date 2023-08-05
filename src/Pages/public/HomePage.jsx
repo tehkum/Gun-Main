@@ -50,22 +50,37 @@ export default function HomePage() {
         <h2>About us</h2>
         <div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            Welcome to Gungun Boutique, your one-stop destination for all your
+            tailoring needs. Whether you are looking for a blouse paper cutting
+            pattern, a dress paper cutting pattern, or any other tailoring
+            material, we have it all for you.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            At Gungun Boutique, we believe that everyone deserves to wear
+            clothes that fit them perfectly and express their unique style.
+            That’s why we offer a wide range of paper cutting patterns for
+            different types of garments, such as saree blouses, kurtis, salwar
+            suits, lehengas, gowns, and more. You can choose from various
+            designs, sizes, and fabrics to suit your preferences and budget.
+          </p>
+          <p>
+            We also provide quality tailoring materials, such as scissors,
+            needles, threads, buttons, zippers, laces, and embellishments. You
+            can find everything you need to create your own custom-made outfits
+            at home or at your local tailor shop.
+          </p>
+          <p>
+            Gungun Boutique is more than just an online store. It is a community
+            of passionate sewers and fashion enthusiasts who love to share their
+            creations and tips with each other. You can join our Facebook group
+            or follow us on Instagram to get inspired by our latest collections
+            and customer reviews. You can also contact us anytime via email or
+            phone if you have any questions or feedback.
+          </p>
+          <p>
+            We hope you enjoy shopping with us and find what you are looking
+            for. Thank you for choosing Gungun Boutique as your trusted partner
+            in tailoring. Happy sewing! 😊
           </p>
         </div>
       </div>
