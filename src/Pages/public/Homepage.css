@@ -38,7 +38,7 @@
 }
 
 .about-us-sec p {
-    width: 500px;
+    max-width: 700px;
     text-align: justify;
     color: #080202;
 }
