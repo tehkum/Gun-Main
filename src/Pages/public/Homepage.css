@@ -17,14 +17,36 @@
     padding: 10px 0;
 }
 
-.sec-free-del {
+/* .sec-free-del {
     background-color: #666
-}
+} */
 
 .free-del {
     width: 200px;
     height: 200px;
     /* background-color: #333; */
+}
+
+.about-us-sec {
+    display: flex;
+    flex-wrap: wrap;
+    /* text-wrap: balance; */
+    justify-content: center;
+    gap: 30px;
+    background-color: #f4875a59;
+    padding: 1rem;
+}
+
+.about-us-sec p {
+    width: 500px;
+    text-align: justify;
+    color: #080202;
+}
+
+.about-us-sec h2 {
+    align-self: center;
+    font-size: 2.5em;
+    color: white;
 }
 
 .category-design {
