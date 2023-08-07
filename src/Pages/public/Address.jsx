@@ -11,6 +11,7 @@ export default function AddressPage() {
     city: "",
     country: "",
     pincode: "",
+    totalPrice: localStorage.getItem("totalPrice"),
   });
 
   const cartDetails = JSON.parse(localStorage.getItem("cart")) || [];

@@ -68,7 +68,8 @@ export default function AllOrders() {
         })}
       </div>
       <h2>Name of person: {thisOrder?.fullName}</h2>
-      <h2>Phone no.: {thisOrder.phoneNo}</h2>
+      <h2>Phone no.: {thisOrder?.phoneNo}</h2>
+      <h2>Total Price: {thisOrder?.totalPrice}</h2>
       <h2>
         <b>Address: </b>
         {thisOrder.address1}--{thisOrder.address2}--{thisOrder.pincode}--

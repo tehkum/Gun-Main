@@ -6,6 +6,7 @@ export default function CheckoutPage(){
 
     useEffect(()=>{
         setfinalPage(JSON.parse(localStorage.getItem("ChekoutData")) ?? [] )
+        
       },[finalPage])
 
     return <>

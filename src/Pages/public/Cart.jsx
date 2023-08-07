@@ -13,10 +13,6 @@ export default function CartPage() {
   const [couponCodes, setCoupons] = useState([]);
   const [discountPrice, setDiscPrice] = useState(0);
 
-  const wayToCheckout = () => {
-    navigate("/address");
-  };
-
   let totalPrice = cart.reduce(
     (acc, { price, qty = 1 }) => (+acc + +price) * qty,
     0
@@ -67,6 +63,11 @@ export default function CartPage() {
     }
   };
 
+  const wayToCheckout = () => {
+    localStorage.setItem("totalPrice", `${totalPrice}`);
+    navigate("/address");
+  };
+
   return (
     <>
       <div className="cartpage">
@@ -112,7 +113,11 @@ export default function CartPage() {
             : "Your cart is Empty"}
         </div>
         <div className="Right-cart-area">
-          <button className="btn btn-primary" onClick={wayToCheckout}>
+          <button
+            className="btn btn-primary"
+            disabled={cart?.length ? true : false}
+            onClick={wayToCheckout}
+          >
             Buy | खरीदें
           </button>
           <h1>Your Cart</h1>
