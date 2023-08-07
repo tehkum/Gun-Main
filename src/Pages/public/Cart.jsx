@@ -115,7 +115,7 @@ export default function CartPage() {
         <div className="Right-cart-area">
           <button
             className="btn btn-primary"
-            disabled={cart?.length ? true : false}
+            disabled={cart?.length ? false : true}
             onClick={wayToCheckout}
           >
             Buy | खरीदें
