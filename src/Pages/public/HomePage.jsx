@@ -1,11 +1,12 @@
 import { useContext } from "react";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+// import { Carousel } from "react-responsive-carousel";
+// import "react-responsive-carousel/lib/styles/carousel.min.css";
 import CategoryBox from "../../Components/CategoryBox";
 import ProductCard from "../../Components/productCard";
+import Carousel from "react-material-ui-carousel";
 import "./Homepage.css";
 import { useProducts } from "../..";
-import { freeDel, prodBox } from "../../img";
+import { freeDel, line } from "../../img";
 
 export default function HomePage() {
   const { productData, searchWord } = useContext(useProducts);
@@ -19,7 +20,13 @@ export default function HomePage() {
   return (
     <>
       <div className="home-carousel">
-        <Carousel>
+        <Carousel
+          autoPlay={true}
+          infiniteLoop={true}
+          cycleNavigation={true}
+          // fullHeightHover={true}
+          indicators={false}
+        >
           <div className="home-carousel-layout">
             <img
               src="https://res.cloudinary.com/dbehxf29s/image/upload/v1686486216/gungun3img_pheggp.png"
@@ -46,7 +53,7 @@ export default function HomePage() {
           </div>
         </Carousel>
       </div>
-      <div className="about-us-sec">
+      {/* <div className="about-us-sec">
         <h2>About us</h2>
         <div>
           <p>
@@ -83,13 +90,12 @@ export default function HomePage() {
             in tailoring. Happy sewing! 😊
           </p>
         </div>
-      </div>
-      <marquee direction="right" className="sec-free-del">
+      </div> */}
+      {/* <marquee direction="right" className="sec-free-del">
         <img src={freeDel} alt="free delivery" className="free-del" />
-      </marquee>
+      </marquee> */}
 
-      <div className="category-design">
-        {/* <div className="category-heading">CATEGORY</div> */}
+      {/* <div className="category-design">
         <div className="category-content">
           <CategoryBox categoryName={"Youtube Tutorials"} />
           {productData
@@ -114,8 +120,8 @@ export default function HomePage() {
         <div className="category-trian"></div>
         <div className="category-trian1"></div>
         <div className="category-trian2"></div>
-      </div>
-      {/* <div className="home-category">
+      </div> */}
+      <div className="home-category">
         <CategoryBox categoryName={"Youtube"} />
         {productData
           ?.reduce(
@@ -135,9 +141,10 @@ export default function HomePage() {
               />
             );
           })}
-      </div> */}
+        <img src={freeDel} alt="free delivery" className="free-del" />
+      </div>
 
-      <h1
+      {/* <h1
         style={{
           textAlign: "center",
           // backgroundColor: "#38d02a",
@@ -148,7 +155,7 @@ export default function HomePage() {
         }}
       >
         Products
-      </h1>
+      </h1> */}
 
       {searchFilter
         ?.reduce(
@@ -170,7 +177,16 @@ export default function HomePage() {
                   color: "green",
                 }}
               >
-                {category.toUpperCase()}
+                <p
+                  style={{
+                    backgroundColor: "#f7f7ed",
+                    display: "inline-flex",
+                    padding: "10px",
+                    alignItems: "center",
+                  }}
+                >
+                   <img src={line} alt="..." width="70"/>{category.toUpperCase()}<img src={line} alt="..." width="70"/>
+                </p>
               </div>
               <div className="home-products" key={category} id={`${category}`}>
                 {productData

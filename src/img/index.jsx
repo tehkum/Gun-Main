@@ -6,5 +6,6 @@ import katori from "./katori.jpg";
 import dress from "./dress.jpg";
 import tailoring from "./Tailoring.jpg";
 import freeDel from "./freeDel.png";
+import line from "./line.png";
 
-export { icon, signin, catbox, prodBox, katori, tailoring, dress, freeDel };
+export { icon, signin, catbox, prodBox, katori, tailoring, dress, freeDel, line };
