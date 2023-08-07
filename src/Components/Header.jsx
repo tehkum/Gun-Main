@@ -59,7 +59,7 @@ export default function Header() {
         <a
           href="https://www.youtube.com/@Gungunsewingclasses"
           className="nav-links"
-          style={{ color: "red", fontSize: "20px", backgroundColor: "white", borderRadius: '10px'}}
+          style={{ color: "red", fontSize: "20px", backgroundColor: "white" }}
         >
           <YouTubeIcon />
         </a>
