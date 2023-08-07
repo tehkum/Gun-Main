@@ -7,5 +7,17 @@ import dress from "./dress.jpg";
 import tailoring from "./Tailoring.jpg";
 import freeDel from "./freeDel.png";
 import line from "./line.png";
+import yt from "./yt.jpg";
 
-export { icon, signin, catbox, prodBox, katori, tailoring, dress, freeDel, line };
+export {
+  icon,
+  signin,
+  catbox,
+  prodBox,
+  katori,
+  tailoring,
+  dress,
+  freeDel,
+  line,
+  yt,
+};

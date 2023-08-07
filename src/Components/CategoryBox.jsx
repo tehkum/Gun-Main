@@ -1,5 +1,5 @@
 import "./CategoryBoc.css";
-import { katori, dress, tailoring } from "../img/index";
+import { katori, dress, tailoring, yt } from "../img/index";
 
 // eslint-disable-next-line react/prop-types
 export default function CategoryBox({ categoryName, isTrue }) {
@@ -17,7 +17,7 @@ export default function CategoryBox({ categoryName, isTrue }) {
       className="category-box"
       href={isTrue ? `#${categoryName}` : `/youtube-vids`}
     >
-      <img src={catType} alt=".." />
+      <img src={isTrue ? catType : yt} alt=".." />
       <p>{categoryName}</p>
     </a>
   );
