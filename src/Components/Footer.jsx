@@ -28,12 +28,34 @@ export default function Footer() {
       </div>
       <hr />
       <div className="footer-icons">
-        <YouTubeIcon />
-        <FacebookIcon />
-        <InstagramIcon />
-        <WebAssetIcon />
+        <a
+          href="https://www.youtube.com/@Gungunsewingclasses"
+          className="link-icon"
+        >
+          <YouTubeIcon />
+        </a>
+        <a
+          href="https://www.facebook.com/GunGunBoutique/"
+          className="link-icon"
+        >
+          <FacebookIcon />
+        </a>
+        <a
+          href="https://www.facebook.com/GunGunBoutique/"
+          className="link-icon"
+        >
+          <InstagramIcon />
+        </a>
+        <a
+          href="https://www.facebook.com/GunGunBoutique/"
+          className="link-icon"
+        >
+          <WebAssetIcon />
+        </a>
       </div>
-      <div className="footer-cpr"><p>copyright by gungun@2023</p></div>
+      <div className="footer-cpr">
+        <p>copyright by gungun@2023</p>
+      </div>
     </div>
   );
 }

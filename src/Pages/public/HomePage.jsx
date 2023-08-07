@@ -122,7 +122,7 @@ export default function HomePage() {
         <div className="category-trian2"></div>
       </div> */}
       <div className="home-category">
-        <CategoryBox categoryName={"Youtube"} />
+        <CategoryBox categoryName={"Youtube Tutorial"} />
         {productData
           ?.reduce(
             (acc, { category }) =>
@@ -185,7 +185,9 @@ export default function HomePage() {
                     alignItems: "center",
                   }}
                 >
-                   <img src={line} alt="..." width="70"/>{category.toUpperCase()}<img src={line} alt="..." width="70"/>
+                  <img src={line} alt="..." width="70" />
+                  {category.toUpperCase()}
+                  <img src={line} alt="..." width="70" />
                 </p>
               </div>
               <div className="home-products" key={category} id={`${category}`}>

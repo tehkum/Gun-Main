@@ -119,7 +119,7 @@ export default function ProductPage() {
           {image4 && <img src={image4} alt="..." />}
         </div> */}
         <div className="card-right">
-        <div className="image-selector">
+          <div className="image-selector">
             <img src={image1} alt="..." onClick={() => setImgSelect(image1)} />
             {image2 && (
               <img
@@ -236,7 +236,7 @@ export default function ProductPage() {
           Add Review
         </button>
       </div>
-      <div>
+      <div style={{ marginBottom: "10px" }}>
         {reviewData?.map((item) => (
           <div key={item._id} className="review-box">
             <p style={{ margin: "0" }}>

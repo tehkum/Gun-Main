@@ -11,7 +11,16 @@
     gap: 20px;
 }
 
-.footer-cpr p{
+.footer-cpr p {
     text-align: center;
+    color: white;
+}
+
+.link-icon {
+    text-decoration: none;
+    color: white;
+}
+
+.link-icon:visited {
     color: white;
 }

@@ -5,7 +5,8 @@ import { useContext, useEffect, useState } from "react";
 import { useAuth, useCart, useProducts } from "..";
 import AdminPanel from "./AdminPanel";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
-import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+// import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import HomeIcon from "@mui/icons-material/Home";
 
 export default function Header() {
@@ -27,14 +28,25 @@ export default function Header() {
 
   return (
     <div className="header">
-      <NavLink to="/">
+      <NavLink
+        to="/"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          flexWrap: "wrap",
+          textDecoration: "none",
+          color: "white",
+          gap: "10px",
+        }}
+      >
         <img
           src={icon}
           height="40"
           width="40"
           alt="gungun-logo"
-          style={{ mixBlendMode: "color-burn" }}
-        />
+          style={{ borderRadius: "40px" }}
+        />{" "}
+        GUNGUN BOTIQUE
       </NavLink>
       <input type="search" placeholder="Search" onChange={searchHandler} />
       <div className="nav-links-main">
@@ -44,12 +56,20 @@ export default function Header() {
         <NavLink to="/cart" className="nav-links">
           <ShoppingBagIcon /> <span>Cart ({cartLen})</span>
         </NavLink>
+        <a
+          href="https://www.youtube.com/@Gungunsewingclasses"
+          className="nav-links"
+          style={{ color: "red", fontSize: "20px", backgroundColor: "white", borderRadius: '10px'}}
+        >
+          <YouTubeIcon />
+        </a>
         {adminLogin ? (
           <AdminPanel />
         ) : (
-          <NavLink to="/login" className="nav-links">
-            <AdminPanelSettingsIcon /> <span>Admin Panel</span>
-          </NavLink>
+          // <NavLink to="/login" className="nav-links">
+          //   <AdminPanelSettingsIcon /> <span>Admin Panel</span>
+          // </NavLink>
+          <></>
         )}
       </div>
     </div>

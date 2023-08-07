@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { useProducts } from "../../Context/ProductProvider"
+import "./youtube.css";
 
 export default function YoutubeVids(){
     const { youtubeVideos } = useContext(useProducts);
@@ -10,6 +11,7 @@ export default function YoutubeVids(){
       return (
         <div key={_id}>
           <iframe
+          className="vid-box"
             width="420"
             height="315"
             src={link}
