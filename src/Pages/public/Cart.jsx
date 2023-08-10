@@ -114,6 +114,25 @@ export default function CartPage() {
         </div>
         <div className="Right-cart-area">
           <button
+            style={{
+              color: "black",
+              border: "2px solid black",
+              padding: "1rem 2rem",
+              backgroundColor: "white",
+              boxShadow: "2px 2px 2px rgba(0, 0, 0)",
+              width: "100%",
+              marginBottom: "10px",
+            }}
+            onClick={() =>
+              window.open(
+                `https://wa.me/918770840787?text=I'm%20interested%20in%20Purchasing%20product%20`,
+                "_blank"
+              )
+            }
+          >
+            Contact Supplier
+          </button>
+          <button
             className="btn btn-primary"
             disabled={cart?.length ? false : true}
             onClick={wayToCheckout}
