@@ -9,7 +9,7 @@ export default function AddressPage() {
     address1: "",
     address2: "",
     city: "",
-    country: "",
+    country: "India",
     pincode: "",
     totalPrice: localStorage.getItem("totalPrice"),
   });
@@ -80,11 +80,11 @@ export default function AddressPage() {
             name="address1"
             value={checkoutDetails.address1}
             onChange={handleChange}
-            placeholder="Address Lane 1"
+            placeholder="Address"
           />
         </label>
 
-        <label>
+        {/* <label>
           <input
             type="text"
             name="address2"
@@ -92,7 +92,7 @@ export default function AddressPage() {
             onChange={handleChange}
             placeholder="Address Lane 2"
           ></input>
-        </label>
+        </label> */}
 
         <label>
           <input
@@ -114,7 +114,7 @@ export default function AddressPage() {
           />
         </label>
 
-        <label>
+        {/* <label>
           <input
             type="text"
             name="country"
@@ -122,7 +122,7 @@ export default function AddressPage() {
             onChange={handleChange}
             placeholder="Country"
           />
-        </label>
+        </label> */}
 
         <button onClick={orderHandler}>Submit</button>
       </div>
