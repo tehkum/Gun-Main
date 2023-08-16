@@ -6,17 +6,20 @@ export const useAuth = createContext();
 
 export function AuthProvider({ children }) {
   const [adminLogin, setAdmin] = useState(false);
-  const [ loginForm, setForm ] = useState({
-    adminNumber: "", adminPassword: ""
+  const [loginForm, setForm] = useState({
+    adminNumber: "",
+    adminPassword: "",
   });
 
-
   const loginHandler = () => {
-    if(loginForm.adminNumber === "9893074902" && loginForm.adminPassword === "dhirendra") {
-        setAdmin(true)
+    if (
+      loginForm.adminNumber === "9893074902" &&
+      loginForm.adminPassword === "dhirendra"
+    ) {
+      setAdmin(true);
     }
-    console.log(adminLogin)
-  }
+    console.log(adminLogin);
+  };
 
   return (
     <useAuth.Provider
@@ -24,7 +27,7 @@ export function AuthProvider({ children }) {
         setForm,
         loginForm,
         loginHandler,
-        adminLogin
+        adminLogin,
       }}
     >
       {children}
