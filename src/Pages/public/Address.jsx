@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
 export default function AddressPage() {
   const [checkoutDetails, setcheckoutDetails] = useState({
@@ -15,6 +17,7 @@ export default function AddressPage() {
   });
 
   const cartDetails = JSON.parse(localStorage.getItem("cart")) || [];
+  const navigate = useNavigate();
 
   useEffect(() => {
     checkoutDetails.productData = cartDetails.reduce(
@@ -35,6 +38,17 @@ export default function AddressPage() {
           },
         }
       );
+      navigate("/");
+      toast("Order Successful", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       console.log(res);
     } catch (error) {
       console.log(error);
@@ -124,7 +138,7 @@ export default function AddressPage() {
           />
         </label> */}
 
-        <button onClick={orderHandler}>Submit</button>
+        <button onClick={orderHandler}>Order</button>
       </div>
     </>
   );
