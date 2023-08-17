@@ -3,6 +3,7 @@ import { useEffect, useState, useContext } from "react";
 import "./Product.css";
 import { useCart, useProducts } from "../..";
 import axios from "axios";
+import Rating from "@mui/material/Rating";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 export default function ProductPage() {
@@ -15,7 +16,7 @@ export default function ProductPage() {
 
   const [review, setReview] = useState({
     name: "",
-    comment: "",
+    comment: null,
     productId: productId,
   });
   const navigate = useNavigate();
@@ -218,12 +219,19 @@ export default function ProductPage() {
           gap: "10px",
         }}
       >
-        <input
+        {/* <input
           type="text"
           placeholder="Write a review"
           onChange={reviewHandler}
           name="comment"
           className="review-input"
+        /> */}
+        {/* <Rating />
+         */}
+        <Rating
+          name="no-value"
+          value={review.comment}
+          onChange={(e) => setReview({ ...review, comment: e.target.value })}
         />
         <input
           type="text"
@@ -242,8 +250,9 @@ export default function ProductPage() {
             <p style={{ margin: "0" }}>
               <strong>Name:</strong> {item.name}
             </p>
-            <p style={{ margin: "0" }}>
-              <strong>Remark:</strong> {item.comment}
+            <p style={{ margin: "0", display: "flex", alignItems: "center" }}>
+              <strong>Rating:</strong>{" "}
+              <Rating name="read-only" value={+item.comment} readOnly />
             </p>
           </div>
         ))}

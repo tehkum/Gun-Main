@@ -1,13 +1,13 @@
 import icon from "./icon.jpeg";
 import signin from "./signin.svg";
-import catbox from "./catbox.png";
-import prodBox from "./prodBack.jpg";
-import katori from "./katori.jpg";
-import dress from "./dress.jpg";
-import tailoring from "./Tailoring.jpg";
-import freeDel from "./freeDel.png";
-import line from "./line.png";
-import yt from "./yt.jpg";
+import catbox from "./catbox.webp";
+import prodBox from "./prodBack.webp";
+import katori from "./katori.webp";
+import dress from "./dress.webp";
+import tailoring from "./Tailoring.webp";
+import freeDel from "./freeDel.webp";
+import line from "./line.webp";
+import yt from "./yt.webp";
 
 export {
   icon,
