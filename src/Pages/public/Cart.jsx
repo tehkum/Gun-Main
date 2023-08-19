@@ -172,7 +172,15 @@ export default function CartPage() {
           </ul>
           <hr />
           <div className="payment-logos">
-            <img
+            <marquee direction="right">
+              <img
+                width="50"
+                height="50"
+                src="https://img.icons8.com/external-nawicon-glyph-nawicon/64/external-Free-Delivery-ecommerce-nawicon-glyph-nawicon.png"
+                alt="external-Free-Delivery-ecommerce-nawicon-glyph-nawicon"
+              />
+            </marquee>
+            {/* <img
               width="50"
               height="50"
               src="https://img.icons8.com/ios-filled/100/visa.png"
@@ -207,7 +215,7 @@ export default function CartPage() {
               height="50"
               src="https://img.icons8.com/ios-filled/100/bank-cards--v1.png"
               alt="bank-cards--v1"
-            />
+            /> */}
           </div>
         </div>
       </div>
