@@ -73,7 +73,7 @@
 @media screen and (max-width: 768px) {
 
     .q7Card {
-        width: 140px;
+        width: 130px;
         max-height: 200px;
         position: relative;
     }
