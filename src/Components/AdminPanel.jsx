@@ -57,6 +57,14 @@ export default function AdminPanel() {
             >
               Videos
             </MenuItem>
+            <MenuItem
+              onClick={() => {
+                navigate("/admin/blog");
+                popupState.close();
+              }}
+            >
+              blog
+            </MenuItem>
           </Menu>
         </React.Fragment>
       )}

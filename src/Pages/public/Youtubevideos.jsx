@@ -7,7 +7,7 @@ export default function YoutubeVids(){
 
     return <div className="product-display">
     {youtubeVideos.map((items) => {
-      const { _id, link } = items;
+      const { _id, link, title } = items;
       return (
         <div key={_id}>
           <iframe
@@ -16,6 +16,7 @@ export default function YoutubeVids(){
             height="315"
             src={link}
           ></iframe>
+          <h2>{title}</h2>
         </div>
       );
     })}

@@ -1,0 +1,26 @@
+.typography {
+    max-width: 800px;
+    margin: auto;
+    text-align: justify;
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+    color: #555;
+}
+
+.typography h3,
+.typography h2 {
+    font-weight: 700;
+    color: #343536;
+}
+
+@media (max-width: 1200px) {
+    .typography {
+        padding: 0.5rem;
+    }
+
+    .item-1,
+    .item-2 {
+        display: none;
+    }
+
+}
