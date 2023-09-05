@@ -2,7 +2,7 @@
 import { TextField } from "@mui/material";
 import axios from "axios";
 import "./blog.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Fab } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import { useNavigate } from "react-router";
@@ -13,6 +13,25 @@ export default function AddBlog() {
   const [showControls, setControls] = useState(false);
   const navigate = useNavigate();
   const [titleDetail, setTitleDetail] = useState({ title: "", img: "" });
+  const [blogData, setBlog] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://teal-vast-blackbuck.cyclic.app/api/admin/blog/all")
+      .then((res) => setBlog(res?.data?.data))
+      .catch((err) => console.log(err));
+  }, []);
+
+  const deleteHandler = async (id) => {
+    try {
+      const res = await axios.delete(
+        `https://teal-vast-blackbuck.cyclic.app/api/admin/blog/${id}/delete`
+      );
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const imageHandler = async (e) => {
     try {
@@ -153,6 +172,25 @@ export default function AddBlog() {
           </div>
         ))}
         <button onClick={submitHandler}>Submit</button>
+      </div>
+      <div className="blog-card-arr">
+        {blogData?.map(({ title, _id, body, mainImg }) => (
+          <div className="blog-card" key={_id}>
+            <img
+              src={mainImg}
+              alt="..."
+              onClick={() => navigate(`/blogs/${_id}`)}
+            />
+            <div>
+              <h2 onClick={() => navigate(`/blogs/${_id}`)}>{title}</h2>
+              <p>{body[0]?.content}</p>
+              <button onClick={() => deleteHandler(_id)}>Delete</button>
+              <button onClick={() => navigate(`/admin/edit-blog/${_id}`)}>
+                edit
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
       <Fab
         color="secondary"
