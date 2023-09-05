@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-key */
-// import { TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 import axios from "axios";
 import "./blog.css";
 import { useState } from "react";
@@ -12,6 +12,28 @@ export default function AddBlog() {
   const [inputArr, setInputArr] = useState([]);
   const [showControls, setControls] = useState(false);
   const navigate = useNavigate();
+  const [titleDetail, setTitleDetail] = useState({ title: "", img: "" });
+
+  const imageHandler = async (e) => {
+    try {
+      const image = e.target.files[0];
+      const data = new FormData();
+      data.append("file", image);
+      data.append("upload_preset", "t3bjkshk");
+      data.append("cloud_name", "da5ar6ga6");
+      const res = await fetch(
+        `https://api.cloudinary.com/v1_1/da5ar6ga6/image/upload`,
+        {
+          method: "POST",
+          body: data,
+        }
+      );
+      const uri = await res.json();
+      setTitleDetail({ ...titleDetail, img: uri?.url });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const submitHandler = async () => {
     try {
@@ -33,14 +55,18 @@ export default function AddBlog() {
         })
         .filter(Boolean);
 
-      const mainContent = { title: "fdsvs", body: [...contentArray] };
+      const mainContent = {
+        title: titleDetail?.title,
+        body: [...contentArray],
+        mainImg: titleDetail?.img,
+      };
       const api = await axios.post(
         "https://teal-vast-blackbuck.cyclic.app/api/admin/blog/add",
         mainContent,
         { headers: { "Content-Type": "application/json" } }
       );
       console.log(api);
-      // navigate("/");
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -94,6 +120,15 @@ export default function AddBlog() {
       )}
       <div className="blog-form">
         <h1>Blog Writing</h1>
+        <TextField
+          label="Enter title"
+          onChange={(e) =>
+            setTitleDetail({ ...titleDetail, title: e.target.value })
+          }
+        />
+        <label>
+          Cover Image: <input type="file" onChange={imageHandler} />
+        </label>
         {inputArr.map((item, index) => (
           <div key={index}>
             {item.type === "image" && (

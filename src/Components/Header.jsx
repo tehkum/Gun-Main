@@ -8,6 +8,7 @@ import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 // import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import HomeIcon from "@mui/icons-material/Home";
+import SourceIcon from "@mui/icons-material/Source";
 
 export default function Header() {
   const { setSearchWord } = useContext(useProducts);
@@ -50,11 +51,14 @@ export default function Header() {
       </NavLink>
       <input type="search" placeholder="Search" onChange={searchHandler} />
       <div className="nav-links-main">
-        <NavLink to="/" className="nav-links">
+        <NavLink to="/" className="nav-links nav-links-home">
           <HomeIcon /> <span>Home</span>
         </NavLink>
         <NavLink to="/cart" className="nav-links">
           <ShoppingBagIcon /> <span>Cart ({cartLen})</span>
+        </NavLink>
+        <NavLink to="/all-blogs" className="nav-links">
+          <SourceIcon /> <span>Blogs</span>
         </NavLink>
         <a
           href="https://www.youtube.com/@Gungunsewingclasses"

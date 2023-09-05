@@ -34,26 +34,23 @@ export default function AllRoutes() {
         <Route path="/product/:productId" element={<ProductPage />} />
         <Route path="/Address" element={<AddressPage />} />
         <Route path="/youtube-vids" element={<YoutubeVids />} />
-        <Route path="/blogs" element={<BlogPage />} />
+        <Route path="/blogs/:blogId" element={<BlogPage />} />
         <Route path="/all-blogs" element={<BlogVIew />} />
         {/* ******************************************************** */}
-        {adminLogin ? (
-          <>
-            <Route path="/admin/order/:orderId" element={<AllOrders />} />
-            <Route path="/admin/all-products/:id" element={<AllProducts />} />
-            <Route path="/admin/all-videos" element={<AllVideos />} />
-            <Route path="/admin/order-management" element={<OrderManage />} />
-            <Route path="/admin/blog" element={<AddBlog />} />
-            <Route
-              path="/admin/product-management"
-              element={<ProductManage />}
-            />
-            <Route path="/admin/video-management" element={<YoutubeManage />} />
-            <Route path="/admin/coupon-management" element={<CouponManage />} />
-          </>
-        ) : (
+        {/* {adminLogin ? ( */}
+        <>
+          <Route path="/admin/order/:orderId" element={<AllOrders />} />
+          <Route path="/admin/all-products/:id" element={<AllProducts />} />
+          <Route path="/admin/all-videos" element={<AllVideos />} />
+          <Route path="/admin/order-management" element={<OrderManage />} />
+          <Route path="/admin/blog" element={<AddBlog />} />
+          <Route path="/admin/product-management" element={<ProductManage />} />
+          <Route path="/admin/video-management" element={<YoutubeManage />} />
+          <Route path="/admin/coupon-management" element={<CouponManage />} />
+        </>
+        {/* ) : (
           <Route path="*" element={<HomePage />} />
-        )}
+        )} */}
       </Routes>
     </>
   );

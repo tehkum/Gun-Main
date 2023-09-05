@@ -36,11 +36,18 @@
     /* align-items: center; */
 }
 
+
 @media (max-width: 767px) {
+
     /* .nav-links-main {
         display: none;
     } */
     .header input {
-       display: none;
+        display: none;
     }
+
+    .nav-links-home {
+        display: none;
+    }
+
 }
