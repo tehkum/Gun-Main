@@ -46,7 +46,12 @@ export default function ProductPage() {
   };
 
   useEffect(() => {
-    setProduct(productData.find(({ _id }) => _id == productId));
+    axios
+      .get(
+        `https://teal-vast-blackbuck.cyclic.app/api/admin/products/${productId}/get`
+      )
+      .then((response) => setProduct(response.data.data));
+    // setProduct(productData.find(({ _id }) => _id == productId));
     setReview({ ...review, productId: productId });
     getReviews();
     // eslint-disable-next-line react-hooks/exhaustive-deps

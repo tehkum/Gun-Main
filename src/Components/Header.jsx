@@ -47,7 +47,7 @@ export default function Header() {
           alt="gungun-logo"
           style={{ borderRadius: "40px" }}
         />{" "}
-        GUNGUN BOTIQUE
+        <span className="logo-heading">GUNGUN BOTIQUE</span>
       </NavLink>
       <input type="search" placeholder="Search" onChange={searchHandler} />
       <div className="nav-links-main">
