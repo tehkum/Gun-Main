@@ -13,6 +13,12 @@
     color: #343536;
 }
 
+.blog-body-image {
+    max-width: 400px;
+    max-height: 400px;
+    object-fit: contain;
+}
+
 .blog-card-arr {
     display: flex;
     flex-direction: column;
@@ -34,6 +40,7 @@
 .main-img-display {
     width: 100%;
     max-height: 350px;
+    object-fit: fill;
 }
 
 .blog-card img {
@@ -41,7 +48,8 @@
     /* max-height: 200px; */
 }
 
-.blog-card h2, .blog-card p{
+.blog-card h2,
+.blog-card p {
     max-width: 500px;
 }
 

@@ -30,14 +30,21 @@ export default function BlogPage() {
         return <p key={body?._id}>{body?.content}</p>;
       }
       if (body?.type === "image") {
-        return <img src={body?._id} alt={body?.alt} key={body?.content} />;
+        return (
+          <img
+            src={body?.src}
+            alt={body?.alt}
+            key={body?.content}
+            className="blog-body-image"
+          />
+        );
       }
     });
   };
 
   return (
     <>
-      <img src={blog?.mainImg} alt={blog?.title} className="main-img-display"/>
+      <img src={blog?.mainImg} alt={blog?.title} className="main-img-display" />
       <div className="layout-subs">
         <div className="typography">
           <h1>{blog?.title}</h1>
