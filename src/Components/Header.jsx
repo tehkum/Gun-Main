@@ -57,8 +57,8 @@ export default function Header() {
         <NavLink to="/cart" className="nav-links">
           <ShoppingBagIcon /> <span>Cart ({cartLen})</span>
         </NavLink>
-        <NavLink to="/all-blogs" className="nav-links">
-          <SourceIcon /> <span>Blogs</span>
+        <NavLink to="/Sewing-class" className="nav-links">
+          <SourceIcon /> <span>Sewing class</span>
         </NavLink>
         <a
           href="https://www.youtube.com/@Gungunsewingclasses"

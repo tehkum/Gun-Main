@@ -1,5 +1,5 @@
 import "./CategoryBoc.css";
-import { katori, dress, tailoring, yt } from "../img/index";
+import { katori, dress, tailoring, yt, sewingClass } from "../img/index";
 
 // eslint-disable-next-line react/prop-types
 export default function CategoryBox({ categoryName, isTrue }) {
@@ -10,12 +10,20 @@ export default function CategoryBox({ categoryName, isTrue }) {
       ? dress
       : categoryName === "Tailoring Material"
       ? tailoring
+      : categoryName === "Sewing-class"
+      ? sewingClass
       : "https://picsum.photos/200/300";
 
   return (
     <a
       className="category-box"
-      href={isTrue ? `#${categoryName}` : `/youtube-vids`}
+      href={
+        isTrue && categoryName === "Sewing-class"
+          ? `/Sewing-class`
+          : isTrue
+          ? `#${categoryName}`
+          : `/youtube-vids`
+      }
     >
       <img src={isTrue ? catType : yt} alt=".." />
       <p>{categoryName}</p>

@@ -8,6 +8,7 @@ import tailoring from "./Tailoring.webp";
 import freeDel from "./freeDel.webp";
 import line from "./line.webp";
 import yt from "./yt.webp";
+import sewingClass from "./sewingClass.jpg";
 
 export {
   icon,
@@ -20,4 +21,5 @@ export {
   freeDel,
   line,
   yt,
+  sewingClass,
 };

@@ -28,7 +28,7 @@ export default function BlogVIew() {
 
   return (
     <div className="blog-view">
-      <h1>Blogs</h1>
+      <h1>Sewing Classes</h1>
       <div className="blog-card-arr">
         {blogData?.map(({ title, _id, body, mainImg }) => (
           <div

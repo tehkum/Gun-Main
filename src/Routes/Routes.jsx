@@ -36,7 +36,7 @@ export default function AllRoutes() {
         <Route path="/Address" element={<AddressPage />} />
         <Route path="/youtube-vids" element={<YoutubeVids />} />
         <Route path="/blogs/:blogId" element={<BlogPage />} />
-        <Route path="/all-blogs" element={<BlogVIew />} />
+        <Route path="/Sewing-class" element={<BlogVIew />} />
         {/* ******************************************************** */}
         {adminLogin ? (
           <>

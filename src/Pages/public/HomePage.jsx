@@ -122,7 +122,7 @@ export default function HomePage() {
         <div className="category-trian2"></div>
       </div> */}
       <div className="home-category">
-        <CategoryBox categoryName={"Youtube Tutorial"} />
+        <CategoryBox categoryName={"Sewing Tutorial"} />
         {productData
           ?.reduce(
             (acc, { category }) =>
@@ -141,7 +141,8 @@ export default function HomePage() {
               />
             );
           })}
-        <img src={freeDel} alt="free delivery" className="free-del" />
+        <CategoryBox categoryName={"Sewing-class"} isTrue />
+        {/* <img src={freeDel} alt="free delivery" className="free-del" /> */}
       </div>
 
       {/* <h1
