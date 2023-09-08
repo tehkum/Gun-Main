@@ -37,7 +37,8 @@ export default function HomePage() {
           </div>
           <div className="home-carousel-layout">
             <img
-              src="https://res.cloudinary.com/dbehxf29s/image/upload/v1686486216/gungun2img_wuj6ng.png"
+              // src="https://res.cloudinary.com/dbehxf29s/image/upload/v1686486216/gungun2img_wuj6ng.png"
+              src="https://res.cloudinary.com/dbehxf29s/image/upload/v1694162868/Wisit_on_Gungun_Sewing_Classes_Youtube_Channel_for_Learning_Basic_and_Advanced_Sewing_Course_1_2_wiehsg.png"
               alt="Carousel Image 2"
               className="Image-carousel
             "
