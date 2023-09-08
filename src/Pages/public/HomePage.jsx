@@ -141,7 +141,7 @@ export default function HomePage() {
               />
             );
           })}
-        <CategoryBox categoryName={"Sewing-class"} isTrue />
+        <CategoryBox categoryName={"Sewing-classes"} isTrue />
         {/* <img src={freeDel} alt="free delivery" className="free-del" /> */}
       </div>
 

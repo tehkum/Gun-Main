@@ -10,7 +10,7 @@ export default function CategoryBox({ categoryName, isTrue }) {
       ? dress
       : categoryName === "Tailoring Material"
       ? tailoring
-      : categoryName === "Sewing-class"
+      : categoryName === "Sewing-classes"
       ? sewingClass
       : "https://picsum.photos/200/300";
 
@@ -18,8 +18,8 @@ export default function CategoryBox({ categoryName, isTrue }) {
     <a
       className="category-box"
       href={
-        isTrue && categoryName === "Sewing-class"
-          ? `/Sewing-class`
+        isTrue && categoryName === "Sewing-classes"
+          ? `/Sewing-classes`
           : isTrue
           ? `#${categoryName}`
           : `/youtube-vids`

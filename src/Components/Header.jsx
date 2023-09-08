@@ -57,7 +57,7 @@ export default function Header() {
         <NavLink to="/cart" className="nav-links">
           <ShoppingBagIcon /> <span>Cart ({cartLen})</span>
         </NavLink>
-        <NavLink to="/Sewing-class" className="nav-links">
+        <NavLink to="/Sewing-classes" className="nav-links">
           <SourceIcon /> <span>Sewing class</span>
         </NavLink>
         <a
