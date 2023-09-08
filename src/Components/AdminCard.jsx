@@ -50,7 +50,7 @@ export default function Admincard(props) {
             <h3>{convertString(name)}</h3>
             <p>{category}</p>
           </div>
-          <p>₹ {price}</p>
+          <p>{price} Rupees</p>
         </div>
       </Link>
       <button className="q7-view-btn" onClick={editHandle}>

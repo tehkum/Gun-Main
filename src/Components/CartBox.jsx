@@ -65,7 +65,7 @@ export default function CartCard({
       <div className="cart-card1">
         <div className="cart-card-part1">
           <h2>{convertString(name, 36)}</h2>
-          <p>₹{price}</p>
+          <p>{price} Rupees</p>
         </div>
         <div className="cart-card-part2">
           <p style={{ color: "#666" }}>{category}</p>

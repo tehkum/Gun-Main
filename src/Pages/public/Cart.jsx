@@ -75,7 +75,7 @@ export default function CartPage() {
           <h1>Your Cart</h1>
           <p>
             TOTAL [{cart?.length ?? 0}]{" "}
-            <b>₹{discountPrice ? discountPrice : totalPrice}</b>
+            <b>{discountPrice ? discountPrice : totalPrice} Rupees</b>
           </p>
           {cart?.length
             ? cart?.map(
@@ -159,14 +159,14 @@ export default function CartPage() {
               </p>
               <p>[Inclusive of all taxes]</p>
             </div>
-            <p>₹{discountPrice ? discountPrice : totalPrice}</p>
+            <p>{discountPrice ? discountPrice : totalPrice} Rupees</p>
           </div>
           <ul>
             {cart?.map(({ name, price, _id, qty = 1 }) => (
               <div key={_id} className="sec1-cart-right">
                 <p>{convertString(name, 30)}</p>
                 <p>{qty}</p>
-                <p>₹{price}</p>
+                <p>{price} Rupees</p>
               </div>
             ))}
           </ul>

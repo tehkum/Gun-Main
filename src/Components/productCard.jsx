@@ -52,7 +52,7 @@ export default function Productcard(props) {
   return (
     <div className="q7Card">
       <img src={image1} alt="..." onClick={redirectTo} />
-      <p className="phone-price"><b>₹ {price}</b></p>
+      <p className="phone-price"><b>{price} Rupees</b></p>
 
       {/* <Link
         to={`/product/${_id}`}
@@ -68,7 +68,7 @@ export default function Productcard(props) {
           </h3>
           <p>{category}</p>
         </div>
-        <p>₹ {price}</p>
+        <p>{price} Rupees</p>
       </div>
       {/* </Link> */}
       <button
