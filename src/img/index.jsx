@@ -9,6 +9,7 @@ import freeDel from "./freeDel.webp";
 import line from "./line.webp";
 import yt from "./yt.webp";
 import sewingClass from "./sewingClass.jpg";
+import sewingCourses from "./SewingCoures.png";
 
 export {
   icon,
@@ -22,4 +23,5 @@ export {
   line,
   yt,
   sewingClass,
+  sewingCourses,
 };

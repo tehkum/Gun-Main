@@ -6,7 +6,7 @@ import ProductCard from "../../Components/productCard";
 import Carousel from "react-material-ui-carousel";
 import "./Homepage.css";
 import { useProducts } from "../..";
-import { freeDel, line } from "../../img";
+import { freeDel, line, sewingCourses } from "../../img";
 
 export default function HomePage() {
   const { productData, searchWord } = useContext(useProducts);
@@ -27,6 +27,14 @@ export default function HomePage() {
           // fullHeightHover={true}
           indicators={false}
         >
+          <div className="home-carousel-layout">
+            <img
+              src="https://res.cloudinary.com/dbehxf29s/image/upload/v1694261734/SewingCoures_c3eobv.png"
+              alt="Carousel Image 1"
+              className="Image-carousel
+            "
+            />
+          </div>
           <div className="home-carousel-layout">
             <img
               src="https://res.cloudinary.com/dbehxf29s/image/upload/v1686486216/gungun3img_pheggp.png"
