@@ -16,10 +16,11 @@ import YoutubeVids from "../Pages/public/Youtubevideos";
 import CouponManage from "../Pages/private/CouponManage";
 import { useContext } from "react";
 import { useAuth } from "../Context/AuthProvider";
-import AddBlog from "../Pages/private/AddBlock";
+// import AddBlog from "../Pages/private/AddBlock";
 import BlogPage from "../Pages/public/Blog";
 import BlogVIew from "../Pages/public/BlogView";
 import EditBlog from "../Pages/private/EditBlog";
+import CreatePost from "../Pages/private/AddBlog";
 
 export default function AllRoutes() {
   const { adminLogin } = useContext(useAuth);
@@ -44,7 +45,7 @@ export default function AllRoutes() {
             <Route path="/admin/all-products/:id" element={<AllProducts />} />
             <Route path="/admin/all-videos" element={<AllVideos />} />
             <Route path="/admin/order-management" element={<OrderManage />} />
-            <Route path="/admin/blog" element={<AddBlog />} />
+            <Route path="/admin/blog" element={<CreatePost />} />
             <Route
               path="/admin/product-management"
               element={<ProductManage />}

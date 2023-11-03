@@ -87,6 +87,37 @@
     max-width: 500px;
 }
 
+.create-post-container {
+    max-width: 750px;
+    margin: 10px auto;
+}
+
+.ql-container {
+    min-height: 40vh;
+    margin-bottom: 10px;
+}
+
+.ql-toolbar {
+    background-color: #ccc;
+}
+
+.create-post-label {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-weight: bold;
+    margin-bottom: 20px
+}
+
+.create-post-label input,
+.create-post-label select {
+    width: 100%;
+    padding: .75rem 1.5rem;
+    border: 1px solid #c2c2c3;
+    font-size: 18px;
+    border-radius: 4px;
+}
+
 
 @media(max-width: 500px) {
     .type-selector {
