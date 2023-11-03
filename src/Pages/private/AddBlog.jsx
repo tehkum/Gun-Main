@@ -45,14 +45,12 @@ const CreatePost = () => {
           heading: postHead,
           coverImage,
           category: postCategory,
-        },
-        { headers: { "Content-Type": "application/json" } }
+        }
       );
       console.log(api);
       navigate("/");
     }
   };
-
 
   const coverHandler = async (e) => {
     const img = await cloudinaryUploader(e.target.files[0]);
