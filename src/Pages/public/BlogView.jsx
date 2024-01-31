@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "./blog.css";
 import { useNavigate } from "react-router";
 // import { useParams } from "react-router";
+import DOMPurify from "dompurify";
 
 export default function BlogVIew() {
   //   const { blogId } = useParams();
@@ -30,16 +31,15 @@ export default function BlogVIew() {
     <div className="blog-view">
       <h1>Sewing Classes</h1>
       <div className="blog-card-arr">
-        {blogData?.map(({ title, _id, body, mainImg }) => (
+        {blogData?.map(({ heading, _id, coverImage }) => (
           <div
             className="blog-card"
             key={_id}
             onClick={() => navigate(`/blogs/${_id}`)}
           >
-            <img src={mainImg} alt="..." />
+            <img src={coverImage} alt="..." />
             <div>
-              <h2>{title}</h2>
-              <p>{body[0]?.content}</p>
+              <h2>{heading}</h2>
             </div>
           </div>
         ))}

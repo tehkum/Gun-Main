@@ -18,6 +18,7 @@
     "@mui/material": "^5.14.0",
     "axios": "^1.4.0",
     "bootstrap": "^5.3.0",
+    "dompurify": "^3.0.8",
     "material-ui-popup-state": "^5.0.9",
     "mdb-react-ui-kit": "^6.1.0",
     "mdb-ui-kit": "^6.4.0",
